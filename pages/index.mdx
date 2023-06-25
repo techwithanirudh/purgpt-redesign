@@ -1,11 +1,38 @@
-# Introduction
- 
-Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
+---
+title: PurGPT - Unleashing the Power of AI Innovation
+---
 
-## What is Nextra?
+import cn from "clsx";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import Feature from "../components/Feature.jsx";
+import { features } from "./page-data.js";
 
-A **simple**, **powerful** and **flexible** site generation framework with everything you love from Next.js.
+<div className="m-8 text-center">
+  <h1 className="headline inline-flex text-[3.125rem] text-[min(4.375rem,max(8vw,2.5rem))] font-bold tracking-[-0.12rem] ml-[-0.2rem] leading-[1.1] mt-[3.4rem]">
+    Unleash the power of AI, for <span className="free">free</span>
+  </h1>
+  <div className="mt-8">
+    Harness AIs like Bing Chat, GPT-4, You.com and more effortlessly
+  </div>
+</div>
 
-## Documentation
+<style jsx>{`
+  .free {
+    font-feature-settings: initial;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  :global(.dark) .free {
+    background-image: linear-gradient(146deg, #fff, #7e22ce);
+  }
+`}</style>
 
-The documentation is available at [https://nextra.site](https://nextra.site).
+ <div className="w-full p-8 grid grid-cols-3 grid-flow-row gap-8">
+        {
+            features.map((coolThing, index) => (
+                <Feature key={index} gridSpan={coolThing.gridSpan} name={coolThing.title} description={coolThing.description} />
+            ))
+        }
+    </div>
