@@ -1,5 +1,5 @@
 import Advanced from "./components/features/Advanced";
-import Intergration from "../components/features/Intergration.mdx";
+import Intergration from "./components/features/Intergration.mdx";
 import Flexible from "./components/features/Flexible";
 import Uptime from "./components/features/Uptime";
 
