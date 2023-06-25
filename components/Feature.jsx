@@ -1,8 +1,9 @@
-export default function Feature({ name, description, key, gridSpan }) {
+export default function Feature({ index, data }) {
   return (
-    <div key={key} style={{gridColumn: 'span '+ gridSpan}} className="text-center border-white/25 p-4 border rounded-lg">
-      <h3 className="text-xl font-bold">{name}</h3>
-      {description}
+    <div key={index} style={{gridColumn: 'span '+ data.gridSpan}} className="text-center border-white/25 p-4 border rounded-lg">
+      <h3 className="text-2xl font-bold">{data.title}</h3>
+      <span className="text-sm mt-2">{data.description}</span>
+      {data.graphic}
     </div>
   );
 }

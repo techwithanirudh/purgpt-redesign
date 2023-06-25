@@ -3,7 +3,7 @@ import type { DocsThemeConfig } from "nextra-theme-docs";
 import { useConfig } from "nextra-theme-docs";
 
 const logo = (
-  <span>
+  <span className="flex font-bold py-4 items-center">
     <svg
       version="1.1"
       id="Layer_1"
@@ -11,7 +11,8 @@ const logo = (
       xmlnsXlink="http://www.w3.org/1999/xlink"
       x="0px"
       y="0px"
-      width="100%"
+      className="rounded-full"
+      width="50px"
       viewBox="0 0 1024 1024"
       enable-background="new 0 0 1024 1024"
     >
@@ -13984,9 +13985,9 @@ const logo = (
         d=" M694.105347,523.160950   C696.438232,523.682190 698.840332,524.582397 700.941467,526.711731   C698.358093,526.787964 695.751465,526.200256 694.105347,523.160950  z"
       />
     </svg>
+    <h1 className="text-3xl ml-2">PurGPT</h1>
     <style jsx>{`
       span {
-        padding: 0.5rem 0.5rem 0.5rem 0;
         mask-image: linear-gradient(
           60deg,
           black 25%,
@@ -13995,25 +13996,22 @@ const logo = (
         );
         mask-size: 400%;
         mask-position: 0%;
+        --tw-space-x-reverse: 0;
       }
       span:hover {
         mask-position: 100%;
-        transition: mask-position 1s ease, -webkit-mask-position 1s ease;
+        transition: mask-position 0.5s ease, -webkit-mask-position 0.5s ease;
       }
     `}</style>
   </span>
 );
 
 const config: DocsThemeConfig = {
-  project: {
-    link: "https://github.com/shuding/nextra",
-  },
-  docsRepositoryBase: "https://github.com/shuding/nextra/tree/main/docs",
   useNextSeoProps() {
     const { asPath } = useRouter();
     if (asPath !== "/") {
       return {
-        titleTemplate: "%s – Nextra",
+        titleTemplate: "%s – PurGPT",
       };
     }
   },
@@ -14021,62 +14019,44 @@ const config: DocsThemeConfig = {
   head: function useHead() {
     const { title } = useConfig();
     const { route } = useRouter();
-    const socialCard =
-      route === "/" || !title
-        ? "https://nextra.site/og.jpeg"
-        : `https://nextra.site/api/og?title=${title}`;
+    const socialCard = "/logo.svg";
 
     return (
       <>
-        <meta name="msapplication-TileColor" content="#fff" />
-        <meta name="theme-color" content="#fff" />
+        <meta name="msapplication-TileColor" content="#7e22ce" />
+        <meta name="theme-color" content="#7e22ce" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Language" content="en" />
         <meta
           name="description"
-          content="Make beautiful websites with Next.js & MDX."
+          content="Unleashing the Power of Free AI Innovation"
         />
         <meta
           name="og:description"
-          content="Make beautiful websites with Next.js & MDX."
+          content="Unleashing the Power of Free AI Innovation"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={socialCard} />
-        <meta name="twitter:site:domain" content="nextra.site" />
-        <meta name="twitter:url" content="https://nextra.site" />
+        <meta name="twitter:site:domain" content="purgpt.xyz" />
+        <meta name="twitter:url" content="https://purgpt.xyz" />
         <meta
           name="og:title"
-          content={title ? title + " – Nextra" : "Nextra"}
+          content={title ? title + " – PurGPT" : "PurGPT"}
         />
         <meta name="og:image" content={socialCard} />
-        <meta name="apple-mobile-web-app-title" content="Nextra" />
+        <meta name="apple-mobile-web-app-title" content="PurGPT" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.png" type="image/png" />
-        <link
-          rel="icon"
-          href="/favicon-dark.svg"
-          type="image/svg+xml"
-          media="(prefers-color-scheme: dark)"
-        />
-        <link
-          rel="icon"
-          href="/favicon-dark.png"
-          type="image/png"
-          media="(prefers-color-scheme: dark)"
-        />
       </>
     );
   },
-  // banner: {
-  //   key: '2.0-release',
-  //   text: (
-  //     <a href="https://nextra.site" target="_blank" rel="noreferrer">
-  //       🎉 Nextra 2.0 is released. Read more →
-  //     </a>
-  //   )
-  // },
-  editLink: {
-    text: "Edit this page on GitHub →",
+  banner: {
+    key: "New website release!",
+    text: (
+      <a href="https://discord.gg/9PU85As8Pd" target="_blank" rel="noreferrer">
+        🎉 New website release! Review on the Discord →
+      </a>
+    ),
   },
   feedback: {
     content: "Question? Give us feedback →",
@@ -14094,27 +14074,13 @@ const config: DocsThemeConfig = {
   },
   footer: {
     text: (
-      <div className="flex w-full flex-col items-center sm:items-start">
-        <div>
-          <a
-            className="flex items-center gap-1 text-current"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="vercel.com homepage"
-            href="https://vercel.com?utm_source=nextra.site"
-          >
-            <span>Powered by</span>
-            <svg height={20} viewBox="0 0 283 64" fill="none">
-              <title>Vercel</title>
-              <path
-                fill="currentColor"
-                d="M141.04 16c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.46 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zM248.72 16c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.45 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zM200.24 34c0 6 3.92 10 10 10 4.12 0 7.21-1.87 8.8-4.92l7.68 4.43c-3.18 5.3-9.14 8.49-16.48 8.49-11.05 0-19-7.2-19-18s7.96-18 19-18c7.34 0 13.29 3.19 16.48 8.49l-7.68 4.43c-1.59-3.05-4.68-4.92-8.8-4.92-6.07 0-10 4-10 10zm82.48-29v46h-9V5h9zM36.95 0L73.9 64H0L36.95 0zm92.38 5l-27.71 48L73.91 5H84.3l17.32 30 17.32-30h10.39zm58.91 12v9.69c-1-.29-2.06-.49-3.2-.49-5.81 0-10 4-10 10V51h-9V17h9v9.2c0-5.08 5.91-9.2 13.2-9.2z"
-              />
-            </svg>
+      <div className="w-full">
+        <p className="mt-6 text-xs text-center">
+          © {new Date().getFullYear()} TayM. Solutions | Service by NotFound
+          (@notfound.sh) | Website designed by {' '}
+          <a href="https://sidd.is-a.dev" className="underline hover:no-underline" target="_blank" rel="noreferrer">
+             Sidd_
           </a>
-        </div>
-        <p className="mt-6 text-xs">
-          © {new Date().getFullYear()} © TayM. Solutions | Made by NotFound.sh#3105
         </p>
       </div>
     ),

@@ -1,17 +1,31 @@
+import Advanced from "../components/features/Advanced";
+import Intergration from "../components/features/Intergration.mdx";
+import Flexible from "../components/features/Flexible";
+import Uptime from "../components/features/Uptime";
+
 export const features = [
   {
     title: "Advanced AI, For Free",
     description: "Access the AI power of OpenAI, You.com and Bing for free with our API",
-    gridSpan: 2,
+    gridSpan: 1,
+    graphic: <Advanced />
 },
   {
     title: "Easy Integration",
     description: "Integrate PurGPT seamlessly into your applications",
-    gridSpan: 1,
+    gridSpan: 2,
+    graphic: <Intergration />
   },
   {
     title: "Flexible Usage",
     description: "Generate text based on your specific needs",
-    gridSpan: 3,
+    gridSpan: 2,
+    graphic: <Flexible />
+  },
+  {
+    title: "Uptime",
+    description: null,
+    gridSpan: 1,
+    graphic: <Uptime />,
   },
 ];
