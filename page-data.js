@@ -1,7 +1,7 @@
-import Advanced from "../components/features/Advanced";
+import Advanced from "./components/features/Advanced";
 import Intergration from "../components/features/Intergration.mdx";
-import Flexible from "../components/features/Flexible";
-import Uptime from "../components/features/Uptime";
+import Flexible from "./components/features/Flexible";
+import Uptime from "./components/features/Uptime";
 
 export const features = [
   {
