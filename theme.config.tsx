@@ -14,7 +14,7 @@ const logo = (
       className="rounded-full"
       width="50px"
       viewBox="0 0 1024 1024"
-      enable-background="new 0 0 1024 1024"
+      enableBackground="new 0 0 1024 1024"
     >
       <path
         fill="#52029C"
