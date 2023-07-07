@@ -24,7 +24,7 @@ export const features = [
   },
   {
     title: "Uptime",
-    description: null,
+    description: "Your AI, always there for you",
     gridSpan: 1,
     graphic: <Uptime />,
   },

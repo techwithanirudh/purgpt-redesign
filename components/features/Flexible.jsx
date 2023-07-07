@@ -1,24 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-export default function Flexible () {
-  const [wordIndex, setWordIndex] = useState(0);
-  const words = ['fun math tutor', 'kind mathematician', 'mysterious adventurer', 'commanding captain', 'hardy pirate'];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setWordIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 1500);
-
-    return () => clearInterval(interval);
-  }, []);
-
+export default function Flexible() {
   return (
-   <div className='flex justify-center items-center h-full'>
-    <p className='transition-all duration-300 text-3xl -mt-24'>
-      "Be a {' '}
-      <span className="inline-block animate-scrolling-word">{words[wordIndex]}</span>
-      "
-    </p>
+    <div className="flex justify-center items-center h-full -mt-10">
+      <p className="text-3xl">
+        "Be {" "}
+        <span className="scrolling-words-container bg-white/10 px-4 -mb-2 rounded-md inline-block relative overflow-hidden">
+          <span className="inline-block text-left animate-scrolling-words">
+            a fun coder <br />
+            a mathematician <br />
+            a nerdy flautist <br />
+            an adventurer <br />
+            commanding <br />
+          </span>
+        </span>
+        "
+      </p>
     </div>
   );
-};
+}
