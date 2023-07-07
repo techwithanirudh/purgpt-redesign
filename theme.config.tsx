@@ -14058,9 +14058,10 @@ const config: DocsThemeConfig = {
       </a>
     ),
   },
+  docsRepositoryBase: "https://github.com/Sidd-underscore/purgpt-redesign",
   feedback: {
     content: "Question? Give us feedback →",
-    labels: "feedback",
+    labels: "feedback docs",
   },
   sidebar: {
     titleComponent({ title, type }) {
@@ -14072,14 +14073,26 @@ const config: DocsThemeConfig = {
     defaultMenuCollapseLevel: 1,
     toggleButton: true,
   },
+  primaryHue: 280,
+  project: {
+    link: "https://github.com/Sidd-underscore/purgpt-redesign",
+  },
+  chat: {
+    link: 'https://discord.gg/9PU85As8Pd' 
+  },
   footer: {
     text: (
       <div className="w-full">
         <p className="mt-6 text-xs text-center">
           © {new Date().getFullYear()} TayM. Solutions | Service by NotFound
-          (@notfound.sh) | Website designed by {' '}
-          <a href="https://sidd.is-a.dev" className="underline hover:no-underline" target="_blank" rel="noreferrer">
-             Sidd_
+          (@notfound.sh) | Website designed by{" "}
+          <a
+            href="https://sidd.is-a.dev"
+            className="underline hover:no-underline"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Sidd_
           </a>
         </p>
       </div>
