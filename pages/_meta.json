@@ -1,4 +1,7 @@
 {
+  "*": {
+    "type": "page"
+  },
   "index": {
     "type": "page",
     "title": "PurGPT",
@@ -7,10 +10,20 @@
       "layout": "raw"
     }
   },
+
   "docs": {
-    "type": "page",
-    "title": "Documentation"
+    "title": "Docs",
+    "href": "/docs/introduction",
+    "type": "page"
   },
+  "examples": {
+    "title": "Examples",
+    "href": "/examples/introduction",
+    "type": "page"
+  },
+
+  "examples/apps": "Apps",
+
   "about": {
     "type": "page",
     "title": "About",

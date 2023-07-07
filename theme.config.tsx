@@ -14078,14 +14078,15 @@ const config: DocsThemeConfig = {
     link: "https://github.com/Sidd-underscore/purgpt-redesign",
   },
   chat: {
-    link: 'https://discord.gg/9PU85As8Pd' 
+    link: "https://discord.gg/9PU85As8Pd",
   },
   footer: {
     text: (
       <div className="w-full">
-        <p className="mt-6 text-xs text-center">
-          © {new Date().getFullYear()} TayM. Solutions | Service by NotFound
-          (@notfound.sh) | Website designed by{" "}
+        <p className="mt-4 text-xs text-center">
+          © {new Date().getFullYear()} TayM. Solutions | Service by NotFound (@notfound.sh)
+          <br className="mt-2"/>
+          Website designed by{" "}
           <a
             href="https://sidd.is-a.dev"
             className="underline hover:no-underline"
