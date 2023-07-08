@@ -28,5 +28,13 @@
     "theme": {
       "typesetting": "article"
     }
+  },
+
+  "todo": {
+    "type": "page",
+    "title": "Todo",
+    "theme": {
+      "typesetting": "article"
+    }
   }
 }
