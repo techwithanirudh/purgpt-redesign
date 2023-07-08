@@ -22,8 +22,6 @@
     "type": "page"
   },
 
-  "examples/apps": "Apps",
-
   "about": {
     "type": "page",
     "title": "About",
