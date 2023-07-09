@@ -1,14 +1,46 @@
-import { Steps } from '../../components/steps/steps.tsx'
+import { Steps } from "../../components/things-from-nextra-that-arent-importing-nicely/steps.tsx";
+import DiscordChannel from "../../components/discord/channel.jsx";
+import { Callout } from "nextra/components";
+import { Tabs, Tab } from "../../components/things-from-nextra-that-arent-importing-nicely/tabs.tsx";
 
 # Getting Started
- 
- 
+
+<Callout type="info" emoji="ℹ️">
+  Currently, to use this API and obtain a key, you **must** have a Discord
+  account.
+</Callout>
+
 <Steps>
-### Step 1
+### Gaining the power: obtaining a key
  
-Contents for step 1.
- 
-### Step 2
- 
-Contents for step 2.
+Think you're worthy to start with PurGPT? We sure do! If you agree with us, simply follow the steps below!
+
+1. Head over to the [Discord server](https://discord.gg/9PU85As8Pd) and verify with Waya (will require not being a robot)
+
+2. Once there, click into the <DiscordChannel>👾 | commands</DiscordChannel> channel
+
+3. Run the `/key` command
+
+4. The PurGPT bot will respond with your key. **Do not, under any circumstance, share it with anyone! It's yours :)**
+
+Here's a visual:
+
+![Visual GIF to describe to above steps](../../public/docs/getting-started/gain-the-key.gif)
+
+### Unleashing the power: using the AI
+
+Once you have your key, the power of PurGPT can be unleashed. Before moving to this step, if you wish, you may test out PurGPT by chatting with it: Use the `/chat` command!
+
+The way that one interacts with PurGPT is, currently, through POST requests (whether that be through cURL, `fetch()`, or other means). This makes it easy to use and cross platform.
+
+A simple demonstration of using PurGPT is below:
+
+<Tabs items={["JS fetch()", "JS xhr", "PY", "Rust", "Java", "cURL"]}>
+  <Tab>**pnpm**: Fast, disk space efficient package manager.</Tab>
+  <Tab>
+    **npm** is a package manager for the JavaScript programming language.
+  </Tab>
+  <Tab>**Yarn** is a software packaging system.</Tab>
+</Tabs>
+
 </Steps>

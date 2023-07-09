@@ -45,3 +45,19 @@ code.text-\[\.45em\] {
   animation: scroll 5s infinite;
   font-weight: bold;
 }
+
+.discord-channel {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #36393f;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.discord-channel:hover {
+  background-color: #7289da;
+}
