@@ -1,7 +1,7 @@
 import { Steps } from "../../components/things-from-nextra-that-arent-importing-nicely/steps.tsx";
 import DiscordChannel from "../../components/discord/channel.jsx";
 import { Callout } from "nextra/components";
-import { Tabs, Tab } from "../../components/things-from-nextra-that-arent-importing-nicely/tabs.tsx";
+import { Tabs, Tab } from "../../components/things-from-nextra-that-arent-importing-nicely/tabs.jsx";
 
 # Getting Started
 
@@ -15,7 +15,7 @@ import { Tabs, Tab } from "../../components/things-from-nextra-that-arent-import
  
 Think you're worthy to start with PurGPT? We sure do! If you agree with us, simply follow the steps below!
 
-1. Head over to the [Discord server](https://discord.gg/9PU85As8Pd) and verify with Waya (will require not being a robot)
+1. Head over to the [Discord server](https://discord.gg/9PU85As8Pd) and verify with Waya or by going to the <DiscordChannel>verify</DiscordChannel> cahnel (will require not being a robot)
 
 2. Once there, click into the <DiscordChannel>👾 | commands</DiscordChannel> channel
 
@@ -33,14 +33,34 @@ Once you have your key, the power of PurGPT can be unleashed. Before moving to t
 
 The way that one interacts with PurGPT is, currently, through POST requests (whether that be through cURL, `fetch()`, or other means). This makes it easy to use and cross platform.
 
-A simple demonstration of using PurGPT is below:
+A simple demonstration of using PurGPT, using the `completions` model, is below:
 
 <Tabs items={["JS fetch()", "JS xhr", "PY", "Rust", "Java", "cURL"]}>
-  <Tab>**pnpm**: Fast, disk space efficient package manager.</Tab>
   <Tab>
-    **npm** is a package manager for the JavaScript programming language.
+  
   </Tab>
-  <Tab>**Yarn** is a software packaging system.</Tab>
+  <Tab>
+   ```js copy filename="index.js"
+    const xhr = new XMLHttpRequest();
+ 
+    xhr.open("POST", "https://purgpt.xyz/v1/chat/completions");
+ 
+    const body = JSON.stringify({
+        messages: [{ role: "user", content: "Hello, PurGPT!" }],
+        key: "YOUR_API_KEY",
+        model: "ANY DESIRED MODEL",
+    });
+    
+    xhr.onload = () => {
+        console.log(JSON.parse(xhr.responseText).); // Returns: "Hello there! How can I assist you today?"
+    };
+ 
+    xhr.send(body);
+   ```
+  </Tab>
+  <Tab>
+  **Yarn** is a software packaging system.
+  </Tab>
 </Tabs>
 
 </Steps>
