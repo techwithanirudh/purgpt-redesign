@@ -35,32 +35,159 @@ The way that one interacts with PurGPT is, currently, through POST requests (whe
 
 A simple demonstration of using PurGPT, using the `completions` model, is below:
 
-<Tabs items={["JS fetch()", "JS xhr", "PY", "Rust", "Java", "cURL"]}>
-  <Tab>
-  
-  </Tab>
+<Tabs items={["JavaScript/Ajax", "Node.js", "Python", "C#", "cURL/BASH"]}>
   <Tab>
    ```js copy filename="index.js"
-    const xhr = new XMLHttpRequest();
- 
-    xhr.open("POST", "https://purgpt.xyz/v1/chat/completions");
- 
-    const body = JSON.stringify({
-        messages: [{ role: "user", content: "Hello, PurGPT!" }],
-        key: "YOUR_API_KEY",
-        model: "ANY DESIRED MODEL",
+const url = 'https://purgpt.xyz/v1/chat/completions';
+
+const data = JSON.stringify({
+        "messages": [{ "role": "user", "content": "Hello, PurGPT!" }],
+        "key": "YOUR API KEY",
+        "model": "gpt-3.5-turbo" // ANY DESIRED MODEL
     });
-    
-    xhr.onload = () => {
-        console.log(JSON.parse(xhr.responseText).); // Returns: "Hello there! How can I assist you today?"
-    };
- 
-    xhr.send(body);
+
+const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: data,
+});
+
+const text = await response.text();
+
+console.log(text);
    ```
   </Tab>
   <Tab>
-  **Yarn** is a software packaging system.
-  </Tab>
+   ```js copy filename="index.js"
+const http = require("https");
+
+const url = 'https://purgpt.xyz/v1/chat/completions';
+
+const options = {
+    method: 'POST',
+    'Content-Type': 'application/json',
+};
+
+const data = JSON.stringify({
+        "messages": [{ "role": "user", "content": "Hello, PurGPT!" }],
+        "key": "YOUR API KEY",
+        "model": "gpt-3.5-turbo" // ANY DESIRED MODEL
+    });
+
+let result = '';
+const req = http.request(url, options, (res) => {
+    console.log(res.statusCode);
+
+    res.setEncoding('utf8');
+    res.on('data', (chunk) => {
+        result += chunk;
+    });
+
+    res.on('end', () => {
+        console.log(result);
+    });
+});
+
+req.on('error', (e) => {
+    console.error(e);
+});
+
+req.write(data);
+req.end();
+    ```
+</Tab>
+<Tab>
+   ```py copy filename="index.py"
+import requests
+from requests.structures import CaseInsensitiveDict
+
+url = "https://purgpt.xyz/v1/chat/completions"
+
+headers = CaseInsensitiveDict()
+headers["Content-Type"] = "application/json"
+
+data = """
+{
+        "messages": [{ "role": "user", "content": "Hello, PurGPT!" }],
+        "key": "YOUR API KEY",
+        "model": "gpt-3.5-turbo" // ANY DESIRED MODEL
+    }
+"""
+
+
+resp = requests.post(url, headers=headers, data=data)
+
+print(resp.status_code)
+```
+</Tab>
+<Tab>
+   ```cs copy filename="index.cs"
+var url = "https://purgpt.xyz/v1/chat/completions";
+
+var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+httpRequest.Method = "POST";
+
+httpRequest.ContentType = "application/json";
+
+var data = @"{
+        ""messages"": [{ ""role"": ""user"", ""content"": ""Hello, PurGPT!"" }],
+        ""key"": ""YOUR API KEY"",
+        ""model"": ""gpt-3.5-turbo"" // ANY DESIRED MODEL
+    }";
+```
+</Tab>
+<Tab>
+   ```bash copy filename="Console"
+curl -X POST https://purgpt.xyz/v1/chat/completions -H "Content-Type: application/json" --data-binary @- <<DATA
+{
+        "messages": [{ "role": "user", "content": "Hello, PurGPT!" }],
+        "key": "YOUR API KEY",
+        "model": "gpt-3.5-turbo" // ANY DESIRED MODEL
+    }
+DATA
+
+```
+</Tab>
 </Tabs>
+Returns:
+
+   ```json filename="Console"
+   {
+    "id": "chatcmpl-7aW8BDCAXErPoazm2dSI1EKEUzKBQ",
+    "object": "chat.completion",
+    "created": 1688937675,
+    "model": "gpt-3.5-turbo-0613",
+    "choices": [{
+        "index": 0,
+        "message": {
+            "role": "assistant",
+            "content": "Hello! How can I assist you today?"
+        },
+        "finish_reason": "stop"
+    }],
+    "usage": {
+        "prompt_tokens": 13,
+        "completion_tokens": 9,
+        "total_tokens": 22
+    }
+}
+```
+
+### Understanding the power: how to use PurGPT
+
+PurGPT is simple: all you have to do is send a POST request to a URL which, depending on your desired action, will give you your desired output.
+
+The URL is constructed like so:
+
+| **Base URL**           	| + 	| **Action**             	| = 	| **Result**                                 	|
+|------------------------	|---	|------------------------	|---	|--------------------------------------------	|
+| https://purgpt.xyz/v1/ 	|   	| `completions`          	|   	| https://purgpt.xyz/v1/completions          	|
+|                        	|   	| `images/generations`   	|   	| https://purgpt.xyz/v1/images/generations   	|
+|                        	|   	| `audio/transcriptions` 	|   	| https://purgpt.xyz/v1/audio/transcriptions 	|
+|                        	|   	| `bing`                 	|   	| https://purgpt.xyz/v1/bing                 	|
+
+Of course, there are many more `Action`s, and other URLs completely, that we offer. All those, and more, will be described in the next sections.
 
 </Steps>
