@@ -2,9 +2,19 @@
   "index": "Introduction",
   "getting-started": "Getting Started",
   "actions-endpoints": "Actions & Endpoints",
+ 
   "-- Chat Completion": {
     "type": "separator",
     "title": "Chat Completion"
   },
-  "completions-models": "Models"
+  "completions-intro": "What is completion?",
+  "completions-models": "List of Models",
+  "completions-using-models": "Using Models",
+
+  "-- Embeddings": {
+    "type": "separator",
+    "title": "Embeddings"
+  },
+  "embeddings-intro": "What are embeddings?"
+
 }
