@@ -14019,7 +14019,7 @@ const config: DocsThemeConfig = {
   head: function useHead() {
     const { title } = useConfig();
     const { route } = useRouter();
-    const socialCard = "/logo.svg";
+    const socialCard = "/purgpt-social-card.png";
 
     return (
       <>
