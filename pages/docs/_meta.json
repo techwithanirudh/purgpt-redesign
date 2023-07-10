@@ -1,5 +1,10 @@
 {
-    "index": "Introduction",
-    "getting-started": "Getting Started",
-    "actions-endpoints": "Actions & Endpoints"
+  "index": "Introduction",
+  "getting-started": "Getting Started",
+  "actions-endpoints": "Actions & Endpoints",
+  "-- Chat Completion": {
+    "type": "separator",
+    "title": "Chat Completion"
+  },
+  "completions-models": "Models"
 }

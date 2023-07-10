@@ -1,8 +1,9 @@
 {
-    "index": "Introduction",
-     "-- Apps": {
-        "type": "separator",
-        "title": "Apps"
-      },
-    "apps": "Apps"
+  "index": "Introduction",
+  "-- Apps": {
+    "type": "separator",
+    "title": "Apps"
+  },
+  "chat": "Chat",
+  "tutor": "Tutor"
 }
