@@ -9,7 +9,7 @@
   },
   "completions-intro": "What is completion?",
   "completions-models": "List of Models",
-  "completions-using-models": "Using Models",
+  "completions-usage": "Using Completion",
 
   "-- Embeddings": {
     "type": "separator",
