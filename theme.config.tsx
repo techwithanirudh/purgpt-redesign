@@ -14058,7 +14058,7 @@ const config: DocsThemeConfig = {
       </a>
     ),
   },
-  docsRepositoryBase: "https://github.com/Sidd-underscore/purgpt-redesign",
+  docsRepositoryBase: "https://github.com/Sidd-underscore/purgpt-redesign/tree/main",
   feedback: {
     content: "Question? Give us feedback →",
     labels: "feedback docs",

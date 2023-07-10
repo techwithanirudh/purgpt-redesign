@@ -1,22 +1,26 @@
-# Nextra Docs Template 
+![PurGPT Social Card](https://raw.githubusercontent.com/Sidd-underscore/purgpt-redesign/main/public/PurGPT.png)
 
-This is a template for creating documentation with [Nextra](https://nextra.site).
+> PurGPT is a free and amazing way to use AI in your apps.
 
-[**Live Demo →**](https://nextra-docs-template.vercel.app)
-
-[![](.github/screenshot.png)](https://nextra-docs-template.vercel.app)
+This is PurGPT's official website and documentation, built with Nextra and TailwindCSS. [**Live Demo →**](purgpt-redesign.nextra.app)
 
 ## Quick Start
 
 Click the button to clone this repository and deploy it on Vercel:
 
-[![](https://vercel.com/button)](https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra-docs-template&showOptionalTeamCreation=false)
+[![](https://vercel.com/button)](https://vercel.com/new/clone?s=https://github.com/Sidd-underscore/purgpt-redesign&showOptionalTeamCreation=false)
+
+Alternatively, download this Repo and unzip the zipped folder.
+
+Then:
 
 ## Local Development
 
-First, run `pnpm i` to install the dependencies.
+First, run `npm i` to install the dependencies.
 
-Then, run `pnpm dev` to start the development server and visit localhost:3000.
+Then, run `npm dev` to start the development server and visit [localhost:3000](localhost:300).
+
+Once you're ready for production, run `npm build` and `npm start`!
 
 ## License
 
