@@ -14041,7 +14041,7 @@ const config: DocsThemeConfig = {
         <meta name="twitter:url" content="https://purgpt.xyz" />
         <meta
           name="og:title"
-          content={title ? title + " – PurGPT" : "PurGPT"}
+          content={title ? title : "PurGPT"}
         />
         <meta name="og:image" content={socialCard} />
         <meta name="apple-mobile-web-app-title" content="PurGPT" />
