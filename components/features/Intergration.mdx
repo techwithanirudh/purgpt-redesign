@@ -1,19 +1,23 @@
 <div className="m-2 mt-6 nx-border-black nx-border-opacity-[0.04] nx-bg-opacity-[0.03] nx-bg-black nx-break-words nx-rounded-md nx-border nx-py-0.5 nx-px-[.25em] nx-text-[.9em] dark:nx-border-white/10 dark:nx-bg-white/10" style={{textAlign: 'left'}}>
-```js
-const xhr = new XMLHttpRequest();
+  ```js
+  const url = 'https://purgpt.xyz/v1/chat/completions';
 
-xhr.open("POST", "https://purgpt.xyz/v1/chat/completions");
+  const data = JSON.stringify({
+      "messages": [{ "role": "user", "content": "Hello, PurGPT!" }],
+      "key": "YOUR API KEY",
+      "model": "gpt-3.5-turbo" // ANY DESIRED MODEL
+  });
 
-const body = JSON.stringify({
-   messages: [{ role: "user", content: "Say this is a Test" }],
-   key: "YOUR_API_KEY",
-   model: "ANY DESIRED MODEL",
-});
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+      body: data,
+  });
 
-xhr.onload = () => {
-  console.log(JSON.parse(xhr.responseText));
-};
+  const text = await response.text();
 
-xhr.send(body);
- ```
+  console.log(text);
+  ```
 </div>

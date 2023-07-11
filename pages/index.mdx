@@ -10,37 +10,37 @@ import Feature from "../components/features/Feature.jsx";
 import { features } from "../page-data.js";
 
 <div className="w-full flex justify-center">
-<div className="max-w-[90rem]">
-<div className="m-8 text-center">
-  <h1 className="headline inline-flex text-[3.125rem] text-[min(4.375rem,max(8vw,2.5rem))] font-bold tracking-[-0.12rem] ml-[-0.2rem] leading-[1.1] mt-[3.4rem]">
-    Unleash the power of AI, for <span className="free">free</span>
-  </h1>
-  <div className="mt-8">
-    Harness AIs like Bing Chat, GPT-4, You.com and more effortlessly
+  <div className="max-w-[100vw]">
+    <div className="m-8 text-center">
+      <h1 className="md:text-7xl text-4xl break-word font-bold mt-[3.4rem]">
+        Unleash the power of AI, for <span className="free">free</span>
+      </h1>
+      <div className="mt-8">
+        Harness AIs from companies like Bing, OpenAI and You.com and more effortlessly, with services like embeddings, chat completions, image generation, speech transcription and so much more!
+      </div>
+    </div>
+
+    <style jsx>{`
+      .free {
+        font-feature-settings: initial;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-image: linear-gradient(146deg, #fff, #7e22ce);
+      }
+    `}</style>
+
+    <div className="m-8 md:grid grid-cols-3 grid-flow-row gap-8">
+    {
+        features.map((featureData, index) => (
+          <div 
+            key={index}
+            className="text-center overflow-hidden mb-2 bg-white/10 p-4 focus:shadow-lg hover:shadow-lg border-2 border-white/0 focus:border-purple-700/25 hover:border-purple-700/25 rounded-lg"
+            style={{ gridColumn: "span " + featureData.gridSpan }}
+          >
+            <Feature data={featureData} />
+          </div>
+        ))
+    }
+    </div>
   </div>
 </div>
-
-<style jsx>{`
-  .free {
-    font-feature-settings: initial;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(146deg, #fff, #7e22ce);
-  }
-`}</style>
-
- <div className="w-full p-8 grid grid-cols-3 grid-flow-row gap-8">
-        {
-            features.map((featureData, index) => (
-              <div 
-              key={index}
-              className="text-center overflow-hidden bg-white/10 p-4 focus:shadow-lg hover:shadow-lg border-2 border-white/0 focus:border-purple-700/25 hover:border-purple-700/25 rounded-lg"
-                    style={{ gridColumn: "span " + featureData.gridSpan }}
-              >
-                <Feature data={featureData} />
-                </div>
-            ))
-        }
-    </div>
-    </div>
-    </div>
