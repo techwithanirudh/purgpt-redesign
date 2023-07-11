@@ -1,4 +1,4 @@
-![PurGPT Social Card](https://raw.githubusercontent.com/Sidd-underscore/purgpt-redesign/main/public/PurGPT.png)
+![PurGPT Social Card](https://raw.githubusercontent.com/Sidd-underscore/purgpt-redesign/main/public/purgpt-social-card.png)
 
 > PurGPT is a free and amazing way to use AI in your apps.
 
