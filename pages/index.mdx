@@ -34,7 +34,7 @@ import { features } from "../page-data.js";
         features.map((featureData, index) => (
           <div 
             key={index}
-            className="text-center overflow-hidden mb-2 bg-white/10 p-4 focus:shadow-lg hover:shadow-lg border-2 border-white/0 focus:border-purple-700/25 hover:border-purple-700/25 rounded-lg"
+            className="text-center overflow-hidden mb-2 bg-white/10 p-4 focus:shadow-lg hover:shadow-lg border-2 border-white/0 rounded-lg"
             style={{ gridColumn: "span " + featureData.gridSpan }}
           >
             <Feature data={featureData} />
