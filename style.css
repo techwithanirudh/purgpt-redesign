@@ -35,14 +35,41 @@ code.text-\[\.45em\] {
   }
 }
 
+@keyframes mobile-scroll {
+  0% {
+    transform: translateY(0em);
+  }
+  20% {
+    transform: translateY(-2rem);
+  } 
+  40% {
+    transform: translateY(-3rem);
+  }
+  60% {
+    transform: translateY(-4rem);
+  }
+  80% {
+    transform: translateY(-5rem);
+  }
+  100% {
+    transform: translateY(0rem);
+  }
+}
+
 .scrolling-words-container {
   height: 1.2em;
-  width: 288px;
+  width: fit-content;
 }
 
 .animate-scrolling-words {
   transform: translateY(0);
   animation: scroll 5s infinite;
+  font-weight: bold;
+}
+
+.animate-scrolling-words-mobile {
+  transform: translateY(0);
+  animation: mobile-scroll 5s infinite;
   font-weight: bold;
 }
 
