@@ -1,6 +1,11 @@
 import { Tabs, Tab } from "../../components/things-from-nextra-that-arent-importing-nicely/tabs.jsx";
+import { Callout } from 'nextra/components'
 
 # Using Embeddings
+
+<Callout type="warning" emoji="⚠️">
+    Embeddings are coming soon. The following docs are not currently reliable!
+</Callout>
 
 The URL to send the POST request to is `https://purgpt.xyz/v1/embeddings`.
 
@@ -10,7 +15,7 @@ To use PurGPT embedding, there are certain required fields to include in the bod
 {
     "input": "A STRING OF TEXT", // ex: The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep.
     "key": "YOUR API KEY", // ex: purgpt-nskruifnelsd
-    "model": "ANY DESIRED MODEL" // ex: gpt-3.5-turbo
+    "model": "ANY DESIRED MODEL" // ex: text-embedding-ada-002
 } 
 ```
 
@@ -22,9 +27,9 @@ To use PurGPT embedding, there are certain required fields to include in the bod
     const url = 'https://purgpt.xyz/v1/embeddings';
 
     const data = JSON.stringify({
-        "messages": [{ "role": "user", "content": "Hello, PurGPT!" }],
+        "input": "The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep.",
         "key": "YOUR API KEY",
-        "model": "gpt-3.5-turbo" // ANY DESIRED MODEL
+        "model": "text-embedding-ada-002" // ANY DESIRED MODEL
     });
 
     const response = await fetch(url, {
@@ -52,9 +57,9 @@ To use PurGPT embedding, there are certain required fields to include in the bod
     };
 
     const data = JSON.stringify({
-        "messages": [{ "role": "user", "content": "Hello, PurGPT!" }],
+        "input": "The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep.",
         "key": "YOUR API KEY",
-        "model": "gpt-3.5-turbo" // ANY DESIRED MODEL
+        "model": "text-embedding-ada-002" // ANY DESIRED MODEL
     });
 
     let result = '';
@@ -91,9 +96,9 @@ To use PurGPT embedding, there are certain required fields to include in the bod
 
     data = """
     {
-            "messages": [{ "role": "user", "content": "Hello, PurGPT!" }],
+            "input": "The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep.",
             "key": "YOUR API KEY",
-            "model": "gpt-3.5-turbo" // ANY DESIRED MODEL
+            "model": "text-embedding-ada-002" // ANY DESIRED MODEL
         }
     """
 
@@ -112,9 +117,9 @@ To use PurGPT embedding, there are certain required fields to include in the bod
     httpRequest.ContentType = "application/json";
 
     var data = @"{
-            ""messages"": [{ ""role"": ""user"", ""content"": ""Hello, PurGPT!"" }],
+            ""input"": ""The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep"",
             ""key"": ""YOUR API KEY"",
-            ""model"": ""gpt-3.5-turbo"" // ANY DESIRED MODEL
+            ""model"": ""text-embedding-ada-002"" // ANY DESIRED MODEL
         }";
     ```
     </Tab>
@@ -122,9 +127,9 @@ To use PurGPT embedding, there are certain required fields to include in the bod
     ```bash copy filename="Console"
     curl -X POST https://purgpt.xyz/v1/embeddings -H "Content-Type: application/json" --data-binary @- <<DATA
         {
-           "messages": [{ "role": "user", "content": "Hello, PurGPT!" }],
+           "input": "The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep.",
            "key": "YOUR API KEY",
-           "model": "gpt-3.5-turbo" // ANY DESIRED MODEL
+           "model": "text-embedding-ada-002" // ANY DESIRED MODEL
         }
     DATA
     ```
