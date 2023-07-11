@@ -7,15 +7,16 @@
     "type": "separator",
     "title": "Chat Completion"
   },
-  "completions-intro": "What are completions?",
-  "completions-models": "List of models",
-  "completions-usage": "Using completion",
+  "completions-intro": "What are Completions?",
+  "completions-models": "List of Completion Models",
+  "completions-usage": "Using Completion",
 
   "-- Embeddings": {
     "type": "separator",
     "title": "Embeddings"
   },
-  "embeddings-intro": "What are embeddings?",
-  "embeddings-usage": "Using embeddings"
+  "embeddings-intro": "What are Embeddings?",
+  "embeddings-models": "List of Embbeding Models",
+  "embeddings-usage": "Using Embeddings"
 
 }
