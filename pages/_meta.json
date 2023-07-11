@@ -5,7 +5,6 @@
   "index": {
     "type": "page",
     "display": "hidden",
-    "title": "PurGPT",
     "theme": {
       "layout": "raw"
     }
