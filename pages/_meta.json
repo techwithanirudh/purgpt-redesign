@@ -4,7 +4,6 @@
   },
   "index": {
     "type": "page",
-    "title": "PurGPT",
     "display": "hidden",
     "theme": {
       "layout": "raw"
