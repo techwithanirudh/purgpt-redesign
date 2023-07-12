@@ -17,6 +17,14 @@
   },
   "embeddings-intro": "What are Embeddings?",
   "embeddings-models": "List of Embbeding Models",
-  "embeddings-usage": "Using Embeddings"
+  "embeddings-usage": "Using Embeddings",
+
+  "-- Image Generation": {
+    "type": "separator",
+    "title": "Image Generation"
+  },
+  "image-intro": "What is Image Generation?",
+  "image-models": "List of Image Generation Models",
+  "image-usage": "Using Image Generation"
 
 }

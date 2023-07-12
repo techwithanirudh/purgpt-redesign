@@ -1,0 +1,137 @@
+import { Tabs, Tab } from "../../components/things-from-nextra-that-arent-importing-nicely/tabs.jsx";
+import { Callout } from 'nextra/components'
+
+# Using Embeddings
+
+<Callout type="warning" emoji="⚠️">
+    Embeddings are coming soon. The following docs are not currently reliable!
+</Callout>
+
+The URL to send the POST request to is `https://purgpt.xyz/v1/embeddings`.
+
+To use PurGPT embedding, there are certain required fields to include in the body of the request:
+
+```json
+{
+    "input": "A STRING OF TEXT", // ex: The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep.
+    "key": "YOUR API KEY", // ex: purgpt-nskruifnelsd
+    "model": "ANY DESIRED MODEL" // ex: text-embedding-ada-002
+} 
+```
+
+## Code Example
+
+<Tabs items={["JavaScript/Ajax", "Node.js", "Python", "C#", "cURL/BASH"]}>
+  <Tab>
+   ```js copy filename="index.js"
+    const url = 'https://purgpt.xyz/v1/embeddings';
+
+    const data = JSON.stringify({
+        "input": "The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep.",
+        "key": "YOUR API KEY",
+        "model": "text-embedding-ada-002" // ANY DESIRED MODEL
+    });
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+        body: data,
+    });
+
+    const text = await response.text();
+
+    console.log(text);
+    ```
+  </Tab>
+  <Tab>
+   ```js copy filename="index.js"
+    const http = require("https");
+
+    const url = 'https://purgpt.xyz/v1/embeddings';
+
+    const options = {
+        method: 'POST',
+        'Content-Type': 'application/json',
+    };
+
+    const data = JSON.stringify({
+        "input": "The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep.",
+        "key": "YOUR API KEY",
+        "model": "text-embedding-ada-002" // ANY DESIRED MODEL
+    });
+
+    let result = '';
+    const req = http.request(url, options, (res) => {
+        console.log(res.statusCode);
+
+        res.setEncoding('utf8');
+        res.on('data', (chunk) => {
+            result += chunk;
+        });
+
+        res.on('end', () => {
+            console.log(result);
+        });
+    });
+
+    req.on('error', (e) => {
+        console.error(e);
+    });
+
+    req.write(data);
+    req.end();
+    ```
+    </Tab>
+    <Tab>
+   ```py copy filename="index.py"
+    import requests
+    from requests.structures import CaseInsensitiveDict
+
+    url = "https://purgpt.xyz/v1/embeddings"
+
+    headers = CaseInsensitiveDict()
+    headers["Content-Type"] = "application/json"
+
+    data = """
+    {
+            "input": "The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep.",
+            "key": "YOUR API KEY",
+            "model": "text-embedding-ada-002" // ANY DESIRED MODEL
+        }
+    """
+
+    resp = requests.post(url, headers=headers, data=data)
+
+    print(resp.status_code)
+    ```
+    </Tab>
+    <Tab>
+     ```cs copy filename="index.cs" 
+    var url = "https://purgpt.xyz/v1/embeddings";
+
+    var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+    httpRequest.Method = "POST";
+
+    httpRequest.ContentType = "application/json";
+
+    var data = @"{
+            ""input"": ""The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep"",
+            ""key"": ""YOUR API KEY"",
+            ""model"": ""text-embedding-ada-002"" // ANY DESIRED MODEL
+        }";
+    ```
+    </Tab>
+    <Tab>
+    ```bash copy filename="Console"
+    curl -X POST https://purgpt.xyz/v1/embeddings -H "Content-Type: application/json" --data-binary @- <<DATA
+        {
+           "input": "The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep.",
+           "key": "YOUR API KEY",
+           "model": "text-embedding-ada-002" // ANY DESIRED MODEL
+        }
+    DATA
+    ```
+    </Tab>
+</Tabs>
