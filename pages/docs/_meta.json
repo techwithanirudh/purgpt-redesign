@@ -17,6 +17,14 @@
   },
   "embeddings-intro": "What are Embeddings?",
   "embeddings-models": "List of Embbeding Models",
-  "embeddings-usage": "Using Embeddings"
+  "embeddings-usage": "Using Embeddings",
+
+  "-- Audio Transcriptions": {
+    "type": "separator",
+    "title": "Audio Transcriptions"
+  },
+  "transcriptions-intro": "What are Audio Transcriptions?",
+  "transcriptions-languages": "Supported Audio Transcription Languages",
+  "transcriptions-usage": "Using Audio Transcriptions"
 
 }

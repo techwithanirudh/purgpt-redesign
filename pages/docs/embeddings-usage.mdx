@@ -121,6 +121,19 @@ To use PurGPT embedding, there are certain required fields to include in the bod
             ""key"": ""YOUR API KEY"",
             ""model"": ""text-embedding-ada-002"" // ANY DESIRED MODEL
         }";
+
+    using (var streamWriter = new StreamWriter(httpRequest.GetRequestStream()))
+    {
+         streamWriter.Write(data);
+    }
+
+    var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+    using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+    {
+         var result = streamReader.ReadToEnd();
+    }
+
+    Console.WriteLine(httpResponse.StatusCode);
     ```
     </Tab>
     <Tab>
