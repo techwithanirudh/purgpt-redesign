@@ -25,6 +25,14 @@
   },
   "image-intro": "What is Image Generation?",
   "image-models": "List of Image Generation Models",
-  "image-usage": "Using Image Generation"
+  "image-usage": "Using Image Generation",
+  
+  "-- Audio Transcriptions": {
+    "type": "separator",
+    "title": "Audio Transcriptions"
+  },
+  "transcriptions-intro": "What are Audio Transcriptions?",
+  "transcriptions-languages": "Supported Audio Transcription Languages",
+  "transcriptions-usage": "Using Audio Transcriptions"
 
 }
