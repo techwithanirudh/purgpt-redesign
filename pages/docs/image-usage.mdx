@@ -13,11 +13,22 @@ To use PurGPT embedding, there are certain required fields to include in the bod
 
 ```json
 {
-    "input": "A STRING OF TEXT", // ex: The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep.
+    "prompt": "A STRING OF TEXT", // ex: The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep.
     "key": "YOUR API KEY", // ex: purgpt-nskruifnelsd
     "model": "ANY DESIRED MODEL" // ex: text-embedding-ada-002
 } 
 ```
+Given that, here is a table with more information on both required and optional parameters that can be passed into the body:
+
+## API Reference
+
+| **Field**            | **Type**     | **Description**                                                                                                                                                                     |
+|------------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| prompt           | `string` | **Required**. A text description of the desired image(s). The maximum length is 1000 characters.                                                                               |
+| n                | `integer`| Optional. Defaults to 1. The number of images to generate. Must be between 1 and 10.                                                                                            |
+| size             | `string` | Optional. Defaults to `1024x1024`. The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.                                                                 |
+| response_format  | `string` | Optional. Defaults to url. The format in which the generated images are returned. Must be one of `url` or `b64_json`.                                                                 |
+| user             | `string` | Optional. A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://platform.openai.com/docs/guides/safety-best-practices/end-user-ids).                                                        |
 
 ## Code Example
 
