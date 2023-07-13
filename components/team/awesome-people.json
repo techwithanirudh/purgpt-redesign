@@ -1,0 +1,181 @@
+[
+  {
+    "name": "Tay",
+    "pronouns": "they/them",
+    "avatar": "https://cdn.discordapp.com/avatars/853265276015738890/57a3ee02ec913976065bdb7522a62200.webp",
+    "description": "Project Lead/Founder",
+    "socials": [
+      {
+        "name": "Battle.net",
+        "identifier": "Tayron#21125",
+        "icon": "/about/the-team/battle-dot-net.svg",
+        "link": null
+      },
+      {
+        "name": "Epic Games",
+        "identifier": "T-REX532",
+        "icon": "/about/the-team/epic-games.svg",
+        "link": null
+      },
+      {
+        "name": "GitHub",
+        "identifier": "tayron1",
+        "icon": "/about/the-team/github.svg",
+        "link": "https://github.com/tayron1"
+      },
+      {
+        "name": "Instagram",
+        "identifier": "notfoundsh531",
+        "icon": "/about/the-team/insta.svg",
+        "link": "https://www.instagram.com/notfoundsh531"
+      },
+      {
+        "name": "PlayStation",
+        "identifier": "NotFoundsh",
+        "icon": "/about/the-team/ps-net.svg",
+        "link": null
+      },
+      {
+        "name": "Spotify",
+        "identifier": "Tayron",
+        "icon": "/about/the-team/spotify.svg",
+        "link": "https://open.spotify.com/user/idrijanyc"
+      },
+      {
+        "name": "Steam",
+        "identifier": "tayron531",
+        "icon": "/about/the-team/steam.svg",
+        "link": "https://steamcommunity.com/profiles/76561198977717099"
+      },
+      {
+        "name": "TikTok",
+        "identifier": "tayron531",
+        "icon": "/about/the-team/tiktok.svg",
+        "link": "https://www.tiktok.com/@tayron531"
+      }
+    ]
+  },
+  {
+    "name": "Mozza",
+    "pronouns": "he/him",
+    "avatar": "https://cdn.discordapp.com/avatars/375112795055980545/cf50307a6e876a81d0c4265bcdb288e6.webp",
+    "description": "Developer/Administrator",
+    "socials": null
+  },
+  {
+    "name": "SpaceDev",
+    "pronoun": "he/him",
+    "avatar": "https://cdn.discordapp.com/avatars/814901183939608668/a_0b0300b6f635680dcf5f928d19be324a.gif",
+    "description": "Developer/Administrator/Exists :)",
+    "socials": [
+      {
+        "name": "GitHub",
+        "identifier": "thespacedev",
+        "icon": "/about/the-team/github.svg",
+        "link": "https://github.com/thespacedev"
+      }
+    ]
+  },
+  {
+    "name": "Tolgchu",
+    "pronouns": "he/cat",
+    "avatar": "https://cdn.discordapp.com/avatars/329671025312923648/6a6a2bd13673f12852a917765d385cfa.webp",
+    "description": "Developper/Local Cat",
+    "socials": [
+      {
+        "name": "GitHub",
+        "identifier": "Tolga1452",
+        "icon": "/about/the-team/github.svg",
+        "link": "https://github.com/Tolga1452"
+      },
+      {
+        "name": "Reddit",
+        "identifier": "Tolgchu",
+        "icon": "/about/the-team/reddit.svg",
+        "link": "https://www.reddit.com/u/Tolgchu"
+      },
+      {
+        "name": "Spotify",
+        "identifier": "✨Tolgchu✨",
+        "icon": "/about/the-team/spotify.svg",
+        "link": "https://open.spotify.com/user/31eejvbgzd2td5cxvxwglws2il6m"
+      },
+      {
+        "name": "Steam",
+        "identifier": "Tolga1452",
+        "icon": "/about/the-team/steam.svg",
+        "link": "https://steamcommunity.com/profiles/76561198920852704"
+      },
+      {
+        "name": "Twitter",
+        "identifier": "Tolgchu",
+        "icon": "/about/the-team/twitter.svg",
+        "link": "https://twitter.com/Tolgchu"
+      },
+      {
+        "name": "Twitter",
+        "identifier": "discordexphub",
+        "icon": "/about/the-team/twitter.svg",
+        "link": "https://twitter.com/discordexphub"
+      },
+      {
+        "name": "Xbox",
+        "identifier": "Tolga1452",
+        "icon": "/about/the-team/xbox.svg",
+        "link": null
+      },
+      {
+        "name": "YouTube",
+        "identifier": "✨Tolgchu✨",
+        "icon": "/about/the-team/youtube.svg",
+        "link": "https://www.youtube.com/channel/UCnG9fe6RdQSIvO98475CNOw"
+      }
+    ]
+  },
+  {
+    "name": "Oliver",
+    "pronouns": "he/him/it/its",
+    "avatar": "https://cdn.discordapp.com/avatars/765273693404266496/0715a8f80853810ca05c2447c5d123f9.webp",
+    "description": "Emotional Support/Comedic Relief",
+    "socials": [
+      {
+        "name": "Spotify",
+        "identifier": "Andy",
+        "icon": "/about/the-team/spotify.svg",
+        "link": "https://open.spotify.com/user/7hhedgzwofpf53f2e6ncsgblg"
+      }
+    ]
+  },
+  {
+    "name": "Sidd_",
+    "pronouns": "she/he/they",
+    "avatar": "https://cdn.discordapp.com/avatars/755917085879697489/ef779c0d3c19b7e47e86e76fedd63b55.webp",
+    "description": "Developper/Made This Sexy Website",
+    "socials": [
+      {
+        "name": "GitHub",
+        "identifier": "Sidd-underscore",
+        "icon": "/about/the-team/github.svg",
+        "link": "https://github.com/Sidd-underscore"
+      },
+      {
+        "name": "Xbox",
+        "identifier": "sidmo23",
+        "icon": "/about/the-team/xbox.svg",
+        "link": null
+      },
+      {
+        "name": "YouTube",
+        "identifier": "Sidd_",
+        "icon": "/about/the-team/youtube.svg",
+        "link": "https://www.youtube.com/channel/UCCciO19Sm1Vc88geV4d4YKg"
+      },
+      {
+        "name": "Twitter",
+        "identifier": "sidd_underscore",
+        "icon": "/about/the-team/twitter.svg",
+        "link": "https://twitter.com/sidd_underscore"
+      }
+    ]
+  }
+]
