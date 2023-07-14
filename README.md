@@ -1,8 +1,8 @@
 ![PurGPT Social Card](https://raw.githubusercontent.com/Sidd-underscore/purgpt-redesign/main/public/purgpt-social-card.png)
 
-> PurGPT is a free and amazing way to use AI in your apps.
+**PurGPT is a free and amazing way to use AI in your apps! [Learn More →](https://purgpt-redesign.vercel.app/about)**
 
-This is PurGPT's official website and documentation, built with Nextra and TailwindCSS. [**Live Demo →**](purgpt-redesign.nextra.app)
+This is PurGPT's official website and documentation, built with Nextra and TailwindCSS. [**Live Demo →**](https://purgpt-redesign.vercel.app)
 
 ## Quick Start
 
