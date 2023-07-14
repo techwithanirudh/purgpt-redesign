@@ -17,7 +17,7 @@ const TeamMember = ({ name, description, socials, avatar }) => {
                 <li
                   key={index}
                   title={social.identifier + ' on ' + social.name}
-                  className="rounded-md "
+                  className={`rounded-md ${social.link === null && 'hidden lg:block'}`}
                 >
                   <a href={social.link} className={`opacity-75 flex ${social.link != null ? 'cursor-pointer hover:opacity-100 transition' : 'cursor-default'} items-center space-x-1 px-1`}>
                     <img
