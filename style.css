@@ -16,43 +16,10 @@ code.text-\[\.45em\] {
 
 @keyframes scroll {
   0% {
-    transform: translateY(0em);
-  }
-  20% {
-    transform: translateY(-2.25rem);
-  }
-  40% {
-    transform: translateY(-4.5rem);
-  }
-  60% {
-    transform: translateY(-6.75rem);
-  }
-  80% {
-    transform: translateY(-9rem);
+    transform: translateY(-1em);
   }
   100% {
-    transform: translateY(0rem);
-  }
-}
-
-@keyframes mobile-scroll {
-  0% {
-    transform: translateY(0em);
-  }
-  20% {
-    transform: translateY(-2rem);
-  } 
-  40% {
-    transform: translateY(-3rem);
-  }
-  60% {
-    transform: translateY(-4rem);
-  }
-  80% {
-    transform: translateY(-5rem);
-  }
-  100% {
-    transform: translateY(0rem);
+    transform: translateY(1em);
   }
 }
 
@@ -63,13 +30,7 @@ code.text-\[\.45em\] {
 
 .animate-scrolling-words {
   transform: translateY(0);
-  animation: scroll 5s infinite;
-  font-weight: bold;
-}
-
-.animate-scrolling-words-mobile {
-  transform: translateY(0);
-  animation: mobile-scroll 5s infinite;
+  animation: scroll 1s infinite ease-out;
   font-weight: bold;
 }
 

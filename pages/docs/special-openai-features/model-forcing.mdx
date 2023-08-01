@@ -1,0 +1,69 @@
+import { Callout } from 'nextra/components'
+
+# Model Forcing
+
+<Callout type="warning" emoji="⚠️">
+    This only works for OpenAI endpoints!
+</Callout>
+
+There is an optional query parameter for OpenAI endpoints: `forceModel`
+
+This parameter can only be `true{:json}`, `auto` or `false{:json}`. Defaults to `auto`.
+
+- If it is `true{:json}`, the API will try to find responses with your requested model.
+- If it is `auto`, the API will try to find responses with your requested model. If not found, will return first valid response.
+- If it is `false{:json}`, the API will return first valid response.
+
+```mermaid
+---
+title: forceModel Algorithm
+---
+stateDiagram-v2
+  forceModel --> true
+  state true {
+    state "Check providers" as trueCheck
+    state "Return response" as trueFound
+    state "Return error" as trueNotFound
+
+    trueCheck --> trueFound : Model found
+    trueCheck --> trueNotFound : Model not found
+  }
+
+  forceModel --> auto
+  state auto {
+    state "Check providers" as autoCheck
+    state "Return response" as autoFound
+    state "All providers errored?" as autoNotFound
+    state "Return error" as autoError
+    state "Return first valid response" as autoNotError
+
+    autoCheck --> autoFound : Model found
+    autoCheck --> autoNotFound : Model not found
+    autoNotFound --> autoError : Yes
+    autoNotFound --> autoNotError : No
+  }
+
+  forceModel --> false
+  state false {
+    state "Check providers" as falseCheck
+    state "Return response" as falseFound
+    state "Return error" as falseNotFound
+
+    falseCheck --> falseFound : Valid response found
+    falseCheck --> falseNotFound : All providers errored
+  }
+```
+
+## Example Request Body With `forceModel`
+
+```json {2}
+{
+	"forceModel": true,
+	"messages": [
+		{
+			"role": "user",
+			"content": "Who are you?"
+		}
+	]
+}
+```

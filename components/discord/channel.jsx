@@ -1,6 +1,6 @@
 const DiscordChannel = ({ children }) => {
   return (
-    <span className="bg-[#36373d] text-sm inline-flex items-center p-[4px_6px] relative rounded-[4px] cursor-pointer select-none transition hover:bg-[#404249] opacity-75 hover:opacity-100">
+    <span className="bg-[#4e4f52] dark:bg-[#36373d] text-white text-sm inline-flex items-center p-[4px_6px] relative rounded-[4px] cursor-pointer select-none transition hover:bg-[#4e4f52] dark:hover:bg-[#404249] opacity-75 hover:opacity-100">
       <svg width="16" height="16" viewBox="0 0 24 24" className="mr-1">
         <path
           fill="currentColor"

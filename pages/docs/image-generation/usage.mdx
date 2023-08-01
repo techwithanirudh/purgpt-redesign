@@ -1,4 +1,4 @@
-import { Tabs, Tab } from "../../components/things-from-nextra-that-arent-importing-nicely/tabs.jsx";
+import { Tabs, Tab } from "../../../components/things-from-nextra-that-arent-importing-nicely/tabs.jsx";
 import { Callout } from 'nextra/components'
 
 # Using Embeddings
@@ -14,7 +14,6 @@ To use PurGPT embedding, there are certain required fields to include in the bod
 ```json
 {
     "prompt": "A STRING OF TEXT", // ex: The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep.
-    "key": "YOUR API KEY", // ex: purgpt-nskruifnelsd
     "model": "ANY DESIRED MODEL" // ex: text-embedding-ada-002
 } 
 ```
@@ -39,7 +38,6 @@ Given that, here is a table with more information on both required and optional 
 
     const data = JSON.stringify({
         "input": "The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep.",
-        "key": "YOUR API KEY",
         "model": "text-embedding-ada-002" // ANY DESIRED MODEL
     });
 
@@ -47,6 +45,7 @@ Given that, here is a table with more information on both required and optional 
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
+          'Authorization': 'Bearer YOUR API KEY',
       },
         body: data,
     });
@@ -65,11 +64,11 @@ Given that, here is a table with more information on both required and optional 
     const options = {
         method: 'POST',
         'Content-Type': 'application/json',
+        'Authorization': 'Bearer YOUR API KEY',
     };
 
     const data = JSON.stringify({
         "input": "The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep.",
-        "key": "YOUR API KEY",
         "model": "text-embedding-ada-002" // ANY DESIRED MODEL
     });
 
@@ -104,11 +103,11 @@ Given that, here is a table with more information on both required and optional 
 
     headers = CaseInsensitiveDict()
     headers["Content-Type"] = "application/json"
+    headers["Authorization"] = "Bearer YOUR API KEY"
 
     data = """
     {
             "input": "The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep.",
-            "key": "YOUR API KEY",
             "model": "text-embedding-ada-002" // ANY DESIRED MODEL
         }
     """
@@ -123,23 +122,22 @@ Given that, here is a table with more information on both required and optional 
     var url = "https://purgpt.xyz/v1/embeddings";
 
     var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+    
     httpRequest.Method = "POST";
-
     httpRequest.ContentType = "application/json";
+    httpRequest.Headers["Authorization"] = "Bearer YOUR API KEY";
 
     var data = @"{
             ""input"": ""The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep"",
-            ""key"": ""YOUR API KEY"",
             ""model"": ""text-embedding-ada-002"" // ANY DESIRED MODEL
         }";
     ```
     </Tab>
     <Tab>
     ```bash copy filename="Console"
-    curl -X POST https://purgpt.xyz/v1/embeddings -H "Content-Type: application/json" --data-binary @- <<DATA
+    curl -X POST https://purgpt.xyz/v1/embeddings -H "Content-Type: application/json" -H "Authorization: Bearer YOUR API KEY" --data-binary @- <<DATA
         {
            "input": "The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep.",
-           "key": "YOUR API KEY",
            "model": "text-embedding-ada-002" // ANY DESIRED MODEL
         }
     DATA

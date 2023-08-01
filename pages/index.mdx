@@ -8,16 +8,18 @@ import Link from "next/link";
 import { useState } from "react";
 import Feature from "../components/features/Feature.jsx";
 import { features } from "../page-data.js";
+import BigButton from '../components/ui/BigButton.jsx'
 
 <div className="w-full flex justify-center">
   <div className="max-w-[100vw]">
     <div className="m-8 text-center">
-      <h1 className="md:text-7xl text-4xl break-word font-bold mt-[3.4rem]">
+      <h1 className="md:text-7xl xl:text-9xl text-5xl break-word font-bold md:mx-16 mt-16">
         Unleash the power of AI, for <span className="free">free</span>
       </h1>
-      <div className="mt-8">
+      <div className="mt-8 text-lg">
         Harness AIs from companies like Bing, OpenAI and You.com and more effortlessly, with services like [embeddings](/docs/embeddings-intro), [chat completions](/docs/completions-intro), [image generation](/docs/image-intro), [audio transcription](/docs/transcriptions-intro) and [so much more](/docs/actions-endpoints)!
       </div>
+      [<BigButton className="group inline-flex mt-4">Get Started<span className="group-hover:ml-3 ml-2 transition-all">→</span></BigButton>](/docs/getting-started)
     </div>
 
     <style jsx>{`
@@ -29,18 +31,25 @@ import { features } from "../page-data.js";
       }
     `}</style>
 
-    <div className="m-8 md:grid grid-cols-3 grid-flow-row gap-8">
-    {
-        features.map((featureData, index) => (
-          <div 
-            key={index}
-            className="text-center overflow-hidden mb-2 bg-white/10 p-4 focus:shadow-lg hover:shadow-lg border-2 border-white/0 rounded-lg"
-            style={{ gridColumn: "span " + featureData.gridSpan }}
-          >
-            <Feature data={featureData} />
-          </div>
-        ))
-    }
+    <div className="m-8 mt-18 text-center">
+      
+      <h1 className="font-bold text-4xl md:text-5xl text-purple-500 dark:text-purple-300">Features</h1>
+      <p className="mt-2 text-md">Skeptic? Here's why you should trust us.</p>
+      
+      <div className="m-8 md:grid grid-cols-3 grid-flow-row gap-8">
+        {
+            features.map((featureData, index) => (
+              <div
+                key={index}
+                className="text-center overflow-hidden mb-2 p-4 focus:shadow-lg transition-all bg-purple-500/10 dark:bg-white/10 border border-purple-500/10 dark:border-transparent rounded-lg"
+                style={{ gridColumn: "span " + featureData.gridSpan }}
+              >
+                <Feature data={featureData} />
+              </div>
+            ))
+        }
+      </div>
+
     </div>
   </div>
 </div>

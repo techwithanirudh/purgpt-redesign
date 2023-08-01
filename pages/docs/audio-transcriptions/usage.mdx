@@ -1,4 +1,4 @@
-import { Tabs, Tab } from "../../components/things-from-nextra-that-arent-importing-nicely/tabs.jsx";
+import { Tabs, Tab } from "../../../components/things-from-nextra-that-arent-importing-nicely/tabs.jsx";
 import { Callout } from 'nextra/components'
 
 # Using Audio Transcriptions
@@ -14,7 +14,6 @@ To use PurGPT transcriptions, there are certain required fields to include in th
 ```json
 {
     "file": "AN AUDIO FILE", // ex: https://audio-samples.github.io/samples/mp3/blizzard_unconditional/sample-0.mp3
-    "key": "YOUR API KEY", // ex: purgpt-nskruifnelsd
 } 
 ```
 
@@ -40,13 +39,13 @@ No `model` field is present, because OpenAI only supplies the `whisper-1` model 
 
     const data = JSON.stringify({
         "file": "https://audio-samples.github.io/samples/mp3/blizzard_unconditional/sample-0.mp3",
-        "key": "YOUR API KEY"
     });
 
     const response = await fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            'Authorization': 'Bearer YOUR API KEY',
         },
         body: data,
     });
@@ -65,11 +64,11 @@ No `model` field is present, because OpenAI only supplies the `whisper-1` model 
     const options = {
         method: 'POST',
         'Content-Type': 'application/json',
+        'Authorization': 'Bearer YOUR API KEY',
     };
 
     const data = `{
        "file": "https://audio-samples.github.io/samples/mp3/blizzard_unconditional/sample-0.mp3",
-       "key": "YOUR API KEY"
     }`;
 
     let result = '';
@@ -103,11 +102,11 @@ No `model` field is present, because OpenAI only supplies the `whisper-1` model 
 
     headers = CaseInsensitiveDict()
     headers["Content-Type"] = "application/json"
+    headers["Authorization"] = "Bearer YOUR API KEY"
 
     data = """
     {
       "file": "https://audio-samples.github.io/samples/mp3/blizzard_unconditional/sample-0.mp3",
-      "key": "YOUR API KEY"
     }
     """
 
@@ -121,13 +120,13 @@ No `model` field is present, because OpenAI only supplies the `whisper-1` model 
     var url = "https://purgpt.xyz/v1/audio/transcriptions";
 
     var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+   
     httpRequest.Method = "POST";
-
     httpRequest.ContentType = "application/json";
+    httpRequest.Headers["Authorization"] = "Bearer YOUR API KEY";
 
     var data = @"{
        ""file"": ""https://audio-samples.github.io/samples/mp3/blizzard_unconditional/sample-0.mp3"",
-       ""key"": ""YOUR API KEY""
     }";
 
     using (var streamWriter = new StreamWriter(httpRequest.GetRequestStream()))
@@ -146,10 +145,9 @@ No `model` field is present, because OpenAI only supplies the `whisper-1` model 
     </Tab>
     <Tab>
     ```bash copy filename="Console"
-   curl -X POST https://purgpt.xyz/v1/audio/transcriptions -H "Content-Type: application/json" --data-binary @- <<DATA
+   curl -X POST https://purgpt.xyz/v1/audio/transcriptions -H "Content-Type: application/json" -H "Authorization: Bearer YOUR API KEY" --data-binary @- <<DATA
     {
        "file": "https://audio-samples.github.io/samples/mp3/blizzard_unconditional/sample-0.mp3",
-       "key": "YOUR API KEY"
     }
     DATA
     ```

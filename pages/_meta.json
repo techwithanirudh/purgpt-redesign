@@ -12,12 +12,12 @@
 
   "docs": {
     "title": "Docs",
-    "href": "/docs/introduction",
+    "href": "/docs",
     "type": "page"
   },
   "examples": {
     "title": "Examples",
-    "href": "/examples/introduction",
+    "href": "/examples",
     "type": "page"
   },
 

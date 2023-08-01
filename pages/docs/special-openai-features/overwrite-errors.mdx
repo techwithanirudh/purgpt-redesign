@@ -1,0 +1,23 @@
+import { Callout } from 'nextra/components'
+
+# `overwriteOnError`
+
+<Callout type="warning" emoji="⚠️">
+    This only works for OpenAI endpoints!
+</Callout>
+
+If you set the `overwriteOnError` query parameter to `true{:json}` (defaults to `true{:json}`), PurGPT will try other AIs instead of OpenAI if OpenAI returns an error.
+
+## Example Request Body With `overwriteOnError`
+
+```json {2}
+{
+	"overwriteOnError": true,
+	"messages": [
+		{
+			"role": "user",
+			"content": "Who are you?"
+		}
+	]
+}
+```

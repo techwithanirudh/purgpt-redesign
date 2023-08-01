@@ -1,4 +1,4 @@
-import { Tabs, Tab } from "../../components/things-from-nextra-that-arent-importing-nicely/tabs.jsx";
+import { Tabs, Tab } from "../../../components/things-from-nextra-that-arent-importing-nicely/tabs.jsx";
 import { Callout } from 'nextra/components'
 
 # Using Embeddings
@@ -14,7 +14,6 @@ To use PurGPT embedding, there are certain required fields to include in the bod
 ```json
 {
     "input": "A STRING OF TEXT", // ex: The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep.
-    "key": "YOUR API KEY", // ex: purgpt-nskruifnelsd
     "model": "ANY DESIRED MODEL" // ex: text-embedding-ada-002
 } 
 ```
@@ -24,10 +23,10 @@ Given that, here is a table with more information on both required and optional 
 ## API Reference
 
 | **Field**   | **Type**                 | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|---------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **model**   | `string`             | **Required**. ID of the model to use. You can use OpenAI's [List models](https://platform.openai.com/docs/api-reference/models/list) API to see all of your available models, or see their [Model overview](https://platform.openai.com/docs/models/overview) for descriptions of them.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| **input**   | `string` or `array`  | **Required**. Input text to embed, encoded as a string or array of tokens. To embed multiple inputs in a single request, pass an array of strings or array of token arrays. Each input must not exceed the max input tokens for the model (8191 tokens for `text-embedding-ada-002`).                                                                                                                                                                                                                                                                                                                                                                                       |
-| **user**    | `string`             | Optional. A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://platform.openai.com/docs/guides/safety-best-practices/end-user-ids).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|-------------|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **model**   | `string`                 | **Required**. ID of the model to use. You can use OpenAI's [List models](https://platform.openai.com/docs/api-reference/models/list) API to see all of your available models, or see their [Model overview](https://platform.openai.com/docs/models/overview) for descriptions of them.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **input**   | `string` or `array`      | **Required**. Input text to embed, encoded as a string or array of tokens. To embed multiple inputs in a single request, pass an array of strings or array of token arrays. Each input must not exceed the max input tokens for the model (8191 tokens for `text-embedding-ada-002`).                                                                                                                                                                                                                                                                                                                                                                                       |
+| **user**    | `string`                 | Optional. A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://platform.openai.com/docs/guides/safety-best-practices/end-user-ids).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
 ## Code Example
 
@@ -38,7 +37,6 @@ Given that, here is a table with more information on both required and optional 
 
     const data = JSON.stringify({
         "input": "The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep.",
-        "key": "YOUR API KEY",
         "model": "text-embedding-ada-002" // ANY DESIRED MODEL
     });
 
@@ -46,6 +44,7 @@ Given that, here is a table with more information on both required and optional 
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
+          'Authorization': 'Bearer YOUR API KEY',
       },
         body: data,
     });
@@ -64,11 +63,11 @@ Given that, here is a table with more information on both required and optional 
     const options = {
         method: 'POST',
         'Content-Type': 'application/json',
+        'Authorization': 'Bearer YOUR API KEY',
     };
 
     const data = JSON.stringify({
         "input": "The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep.",
-        "key": "YOUR API KEY",
         "model": "text-embedding-ada-002" // ANY DESIRED MODEL
     });
 
@@ -103,11 +102,11 @@ Given that, here is a table with more information on both required and optional 
 
     headers = CaseInsensitiveDict()
     headers["Content-Type"] = "application/json"
+    headers["Authorization"] = "Bearer YOUR API KEY"
 
     data = """
     {
             "input": "The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep.",
-            "key": "YOUR API KEY",
             "model": "text-embedding-ada-002" // ANY DESIRED MODEL
         }
     """
@@ -122,13 +121,13 @@ Given that, here is a table with more information on both required and optional 
     var url = "https://purgpt.xyz/v1/embeddings";
 
     var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+    
     httpRequest.Method = "POST";
-
+    httpRequest.Headers["Authorization"] = "Bearer YOUR API KEY";
     httpRequest.ContentType = "application/json";
 
     var data = @"{
             ""input"": ""The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep"",
-            ""key"": ""YOUR API KEY"",
             ""model"": ""text-embedding-ada-002"" // ANY DESIRED MODEL
         }";
 
@@ -148,10 +147,9 @@ Given that, here is a table with more information on both required and optional 
     </Tab>
     <Tab>
     ```bash copy filename="Console"
-    curl -X POST https://purgpt.xyz/v1/embeddings -H "Content-Type: application/json" --data-binary @- <<DATA
+    curl -X POST https://purgpt.xyz/v1/embeddings -H "Content-Type: application/json" -H "Authorization: Bearer YOUR API KEY" --data-binary @- <<DATA
         {
            "input": "The cat sat on a frog in the evening. The frog was mad, because it wanted to sleep.",
-           "key": "YOUR API KEY",
            "model": "text-embedding-ada-002" // ANY DESIRED MODEL
         }
     DATA

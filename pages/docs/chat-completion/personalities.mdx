@@ -1,0 +1,40 @@
+import DonatorOnly from "../../../components/special-text/DonatorOnly.jsx"
+import BetaFeature from "../../../components/special-text/BetaFeature.jsx"
+
+# Completion Personalities
+
+PurGPT chat completion responses can be modified to fit a personality. Personalities are bassically just system messages but with professional prompts and example chats for the AI.
+
+## Example Request Body With `personality`
+
+```json {2}
+{
+	"personality": "programmer-ai",
+	"messages": [
+		{
+			"role": "user",
+			"content": "Who are you?"
+		}
+	]
+}
+```
+
+Response will be same as with normal responses.
+
+## List of Personalities (and Description)
+
+### `programmer-ai`
+
+The `programmer-ai` personality is a professional programmer that helps you write code! It is trained with many, many, many messages and chats currated specially for code help. 
+
+### `moderator` <DonatorOnly>(donator only)</DonatorOnly>
+
+The `moderator` personality is your personal moderator, here to help manage and, well, moderate issues.
+
+### `kira` <BetaFeature>(beta)</BetaFeature>
+
+The `kira` personality is a happy and energetic anime character! She's lively, always ready for help, and is always cherrful and excited.
+
+### `trollbot`
+
+We all need trolling...

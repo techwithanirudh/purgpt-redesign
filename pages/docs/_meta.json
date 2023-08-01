@@ -1,38 +1,40 @@
 {
   "index": "Introduction",
+  "-- Welcome!": {
+    "type": "separator",
+    "title": "Welcome!"
+  },
   "getting-started": "Getting Started",
   "actions-endpoints": "Actions & Endpoints",
- 
-  "-- Chat Completion": {
-    "type": "separator",
-    "title": "Chat Completion"
-  },
-  "completions-intro": "What are Completions?",
-  "completions-models": "List of Completion Models",
-  "completions-usage": "Using Completion",
+  "error-tracker": "Error Tracker",
+  "error-list": "Error List",
+  "limits-and-paid-perks": "Ratelimits and Paid Perks",
 
-  "-- Embeddings": {
+  "-- The API": {
     "type": "separator",
-    "title": "Embeddings"
+    "title": "The API"
   },
-  "embeddings-intro": "What are Embeddings?",
-  "embeddings-models": "List of Embbeding Models",
-  "embeddings-usage": "Using Embeddings",
+  "audio-transcriptions": "Audio Transcriptions",
+  "chat-completion": "Chat Completion",
+  "embeddings": "Embeddings",
+  "image-generation": "Image Generation",
+  "special-openai-features": "Special OpenAI Features",
 
-  "-- Image Generation": {
+  "-- More": {
     "type": "separator",
-    "title": "Image Generation"
+    "title": "More"
   },
-  "image-intro": "What is Image Generation?",
-  "image-models": "List of Image Generation Models",
-  "image-usage": "Using Image Generation",
-  
-  "-- Audio Transcriptions": {
-    "type": "separator",
-    "title": "Audio Transcriptions"
+  "about-link": {
+    "title": "About PurGPT",
+    "href": "/about"
   },
-  "transcriptions-intro": "What are Audio Transcriptions?",
-  "transcriptions-languages": "Supported Audio Transcription Languages",
-  "transcriptions-usage": "Using Audio Transcriptions"
-
+  "examples-link": {
+    "title": "Examples",
+    "href": "/examples"
+  },
+  "discord-invite": {
+    "title": "Discord ↗",
+    "href": "https://discord.gg/9PU85As8Pd",
+    "newWindow": true
+  }
 }

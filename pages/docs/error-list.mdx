@@ -1,0 +1,28 @@
+# List of Errors
+
+You may encounter errors when dealing with our API. Below is a table with the most common errors that you may find.
+
+| **Error**           | **Description**                                                                                                                                                    |
+|-----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 400 Bad Request | The request could not be understood or was missing required parameters.                                                                                        |
+| 401 Unauthorized | Authentication credentials are missing, invalid, or expired, and the request cannot be processed without proper authentication.                                |
+| 403 Forbidden | The request is valid, but the server refuses to respond to it. The client does not have the necessary permissions to access the requested resource.         |
+| 404 Not Found | The requested resource could not be found on the server. It may have been moved or deleted, or the URL might be incorrect.                                    |
+| 405 Method Not Allowed | The HTTP method (GET, POST, PUT, DELETE, etc.) used in the request is not supported for the specified resource.                                         |
+| 429 Too Many Requests | The user has sent too many requests in a given amount of time, and the server is rate-limiting the client to prevent abuse.                                 |
+| 500 Internal Server Error | An unexpected condition was encountered on the server, and no more specific message is suitable to convey the exact nature of the problem. __Usually occurs when all our providers return with errors.__               |
+| 502 Bad Gateway | The server acting as a gateway or proxy received an invalid response from the upstream server while trying to fulfill the request.                        |
+| 503 Service Unavailable | The server is not ready to handle the request. Common causes include maintenance, temporary overloading, or server downtime.                                |
+| 504 Gateway Timeout | The server acting as a gateway or proxy did not receive a timely response from the upstream server or another auxiliary server while trying to load the URL. |
+
+There also exists a short message when an error occurs that should also help you:
+
+```json {4} filename="Response"
+{
+	"status": 500,
+	"error": {
+	"message": "All of our providers returned with errors. Errors are automatically reported to our developers.",
+	"records": [...]
+	}
+}
+```
