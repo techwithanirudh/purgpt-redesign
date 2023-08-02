@@ -49,3 +49,79 @@ code.text-\[\.45em\] {
 .discord-channel:hover {
   background-color: #7289da;
 }
+
+.animate-personalities {
+  background-size: 800%;
+  animation: personality-shift 5s ease-in-out infinite;
+}
+
+@keyframes personality-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-ungrayscale-1 {
+  animation: ungrayscale-1 2.5s ease-in-out infinite;
+}
+
+@keyframes ungrayscale-1 {
+  0% {
+    filter: grayscale(100%);
+  }
+  25% {
+    filter: grayscale(0%);
+  }
+  100% {
+    filter: grayscale(100%);
+  }
+}
+
+.animate-ungrayscale-2 {
+  animation: ungrayscale-2 2.5s ease-in-out infinite;
+}
+
+@keyframes ungrayscale-2 {
+  0% {
+    filter: grayscale(100%);
+  }
+  50% {
+    filter: grayscale(0%);
+  }
+  100% {
+    filter: grayscale(100%);
+  }
+}
+
+.animate-ungrayscale-3 {
+  animation: ungrayscale-3 2.5s ease-in-out infinite;
+}
+
+@keyframes ungrayscale-3 {
+  00% {
+    filter: grayscale(100%);
+  }
+  75% {
+    filter: grayscale(0%);
+  }
+  100% {
+    filter: grayscale(100%);
+  }
+}
+
+.animate-ungrayscale-4 {
+  animation: ungrayscale-4 2.5s ease-in-out infinite;
+}
+
+@keyframes ungrayscale-4 {
+  10% {
+    filter: grayscale(100%);
+  }
+  100% {
+    filter: grayscale(0%);
+  }
+}
