@@ -16,7 +16,7 @@ import Video from "../../components/ui/Video.jsx"
  
 Think you're worthy to start with PurGPT? We sure do! If you agree with us, simply follow the steps below!
 
-1. Head over to the [Discord server](https://discord.gg/9PU85As8Pd) and verify with Waya or by going to the <DiscordChannel>verify</DiscordChannel> channel (will require not being a robot)
+1. Head over to the [Discord server](https://discord.gg/9PU85As8Pd)
 
 2. Once there, click into the <DiscordChannel>👾 | commands</DiscordChannel> channel
 
@@ -36,9 +36,45 @@ The way that one interacts with PurGPT is, currently, through POST requests (whe
 
 A simple demonstration of using PurGPT, using the `completions` model, is below:
 
-<Tabs items={["JavaScript/Ajax", "Node.js", "Python", "C#", "cURL/BASH"]}>
+<Tabs items={["purgpt.js (JavaScript)", "purgpt.js (TypeScript)", "JavaScript/Ajax", "Node.js", "Python", "C#", "cURL/BASH"]}>
   <Tab>
-   ```js copy filename="index.js"
+    ```js copy filename="index.js"
+    const PurGPT = require('purgpt.js');
+    const { OpenAIChatCompletionsMessageRole, OpenAIChatCompletionsModel } = require('purgpt.js/src/types');
+  
+    const purgpt = new PurGPT('YOUR API KEY');
+  
+    purgpt.openAI.chat.completions({
+        messages: [
+            {
+                role: OpenAIChatCompletionsMessageRole.User,
+                content: 'Hello, PurGPT!'
+            }
+        ],
+        model: OpenAIChatCompletionsModel['GPT-3.5 Turbo'] // ANY DESIRED MODEL
+    }).then(console.log);
+    ```
+  </Tab>
+  <Tab>
+    ```ts copy filename="index.ts"
+    import PurGPT from 'purgpt.js';
+    import { OpenAIChatCompletionsMessageRole, OpenAIChatCompletionsModel } from 'purgpt.js/src/types';
+  
+    const purgpt = new PurGPT('YOUR API KEY');
+  
+    purgpt.openAI.chat.completions({
+        messages: [
+            {
+                role: OpenAIChatCompletionsMessageRole.User,
+                content: 'Hello, PurGPT!'
+            }
+        ],
+        model: OpenAIChatCompletionsModel['GPT-3.5 Turbo'] // ANY DESIRED MODEL
+    }).then(console.log);
+    ```
+  </Tab>
+  <Tab>
+    ```js copy filename="index.js"
     const url = 'https://purgpt.xyz/v1/chat/completions';
 
     const data = JSON.stringify({
@@ -61,7 +97,7 @@ A simple demonstration of using PurGPT, using the `completions` model, is below:
     ```
   </Tab>
   <Tab>
-   ```js copy filename="index.js"
+    ```js copy filename="index.js"
     const http = require("https");
 
     const url = 'https://purgpt.xyz/v1/chat/completions';
@@ -100,7 +136,7 @@ A simple demonstration of using PurGPT, using the `completions` model, is below:
     ```
     </Tab>
     <Tab>
-   ```py copy filename="index.py"
+    ```py copy filename="index.py"
     import requests
     from requests.structures import CaseInsensitiveDict
 
@@ -123,7 +159,7 @@ A simple demonstration of using PurGPT, using the `completions` model, is below:
     ```
     </Tab>
     <Tab>
-     ```cs copy filename="index.cs"
+    ```cs copy filename="index.cs"
     var url = "https://purgpt.xyz/v1/chat/completions";
 
     var httpRequest = (HttpWebRequest)WebRequest.Create(url);
