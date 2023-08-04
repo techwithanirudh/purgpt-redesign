@@ -45,3 +45,46 @@ interface Request {
     ]
 }
 ```
+
+## Response
+
+### TS Response Interface
+
+```ts
+interface Response {
+	id: string;
+	created: number;
+	model: string;
+	choices: [
+		{
+			index: number;
+			message: {
+				role: 'assistant',
+				content: string;
+			};
+			finish_reason: any;
+		}
+	];
+};
+```
+
+### Example JSON Response
+
+```json
+{
+    "id": "c20ccfc2db49ca08b17b0b47ddb29ea6bdb750beb7dc146f17fcfb94a9beaf56",
+    "object": "chat.completion",
+    "created": 1690391419,
+    "model": "claude-instant-1.1",
+    "choices": [
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "hello there !"
+            },
+            "finish_reason": "stop_sequence"
+        }
+    ]
+}
+```

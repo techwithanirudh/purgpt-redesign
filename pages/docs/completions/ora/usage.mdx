@@ -1,56 +1,18 @@
-import { Callout } from 'nextra/components'
-
-# Using OpenAI Chat Completion
+# Using Ora Completion
 
 ## Request
 
-**URL: `https://purgpt.xyz/openai/chat/completions`**
+**URL: `https://purgpt.xyz/ora/completions`**
 
 Request Method: `POST`
 
 ### TS Request Interface
 
-<Callout type="warning" emoji="⚠️">
-    One of the `model` and `personality` fields must be set!
-</Callout>
-
 ```ts
 interface Request {
-	model?: string;
-	personality?: string;
-	messages: {
-		role: 'system' | 'user' | 'assistant' | 'function';
-		content: string;
-		name?: string;
-		function_call?: object;
-	}[];
-	functions?: {
-		name: string;
-		description?: string;
-		parameters: {
-			type: 'object';
-			properties: {
-				[name: string]: {
-					type: string;
-					description: string;
-				};
-			};
-			required?: string[];
-		};
-	}[];
-	function_call?: 'none' | 'auto' | {
-		name: string;
-	};
-	temperature?: number;
-	top_p?: number;
-	n?: number;
-	stream?: boolean;
-	stop?: string | any[] | null;
-	max_tokens?: number;
-	presence_penalty?: number;
-	frequency_penalty?: number;
-	logit_bias?: object | null;
-	user?: string;
+	model?;
+	conversationId?: string;
+	prompt: string;
 };
 ```
 
@@ -59,12 +21,7 @@ interface Request {
 ```json
 {
   "model": "gpt-3.5-turbo",
-  "messages": [
-    {
-      "role": "user",
-      "content": "Hello! How are you?"
-    }
-  ]
+  "prompt": "Hello, how are you?"
 }
 ```
 
@@ -137,7 +94,7 @@ interface Response {
     "id": "chatcmpl-QXlha2FBbmROaXhpZUFyZUF3ZXNvbWUK",
     "object": "chat.completion",
     "created": 0,
-    "model": "gpt-3.5-turbo-0301",
+    "model": "gpt-3.5-turbo",
     "usage": {
         "prompt_tokens": 0,
         "completion_tokens": 0,

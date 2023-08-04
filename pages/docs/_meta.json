@@ -16,7 +16,10 @@
   },
   "models": "Gettings Availible Models",
   "chat-completions": "Chat Completions",
+  "completions": "Completions",
   "document-analysis": "Document Analysis",
+  "moderations": "Moderations",
+  "image-generation": "Image Generation",
   "special-openai-features": "Special OpenAI Features",
 
   "-- More": {

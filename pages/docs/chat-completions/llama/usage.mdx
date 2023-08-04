@@ -1,46 +1,22 @@
-import { Callout } from 'nextra/components'
-
-# Using OpenAI Chat Completion
+# Using Llama Chat Completion
 
 ## Request
 
-**URL: `https://purgpt.xyz/openai/chat/completions`**
+**URL: `https://purgpt.xyz/llama/chat/completions`**
 
 Request Method: `POST`
 
-### TS Request Interface
-
-<Callout type="warning" emoji="⚠️">
-    One of the `model` and `personality` fields must be set!
-</Callout>
+### TS Interface
 
 ```ts
 interface Request {
-	model?: string;
-	personality?: string;
+	model: string;
 	messages: {
 		role: 'system' | 'user' | 'assistant' | 'function';
 		content: string;
 		name?: string;
 		function_call?: object;
 	}[];
-	functions?: {
-		name: string;
-		description?: string;
-		parameters: {
-			type: 'object';
-			properties: {
-				[name: string]: {
-					type: string;
-					description: string;
-				};
-			};
-			required?: string[];
-		};
-	}[];
-	function_call?: 'none' | 'auto' | {
-		name: string;
-	};
 	temperature?: number;
 	top_p?: number;
 	n?: number;

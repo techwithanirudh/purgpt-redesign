@@ -1,0 +1,132 @@
+# Using Moderations
+
+## Request
+
+**URL: `https://purgpt.xyz/openai/moderations`**
+
+Request Method: `POST`
+
+### TS Interface
+
+```ts
+interface Request {
+	input: string | string[];
+	model?: string;
+};
+```
+
+### Example JSON Request Body
+
+```json
+{
+    "model": "text-moderation-stable",
+    "input": "hello"
+}
+```
+
+## Response
+
+### TS Response Interface
+
+```ts
+interface Response {
+	id: `modr-${string}`;
+	model: string;
+	results: {
+		flagged: boolean;
+		categories: {
+			sexual: boolean,
+      hate: boolean,
+      harassment: boolean,
+      'self-harm': boolean,
+      'sexual/minors': boolean,
+      'hate/threatening': boolean,
+      'violence/graphic': boolean,
+      'self-harm/intent': boolean,
+      'self-harm/instructions': boolean,
+      'harassment/threatening': boolean,
+      violence: boolean;
+		};
+		category_scores: {
+			sexual: number,
+      hate: number,
+      harassment: number,
+      'self-harm': number,
+      'sexual/minors': number,
+      'hate/threatening': number,
+      'violence/graphic': number,
+      'self-harm/intent': number,
+      'self-harm/instructions': number,
+      'harassment/threatening': number,
+      violence: number;
+		};
+	}[];
+	overwritten: boolean;
+	provider: string;
+	cache?: {
+		status: 500,
+		error: {
+			message: 'Some of our providers returned with errors. Errors are automatically reported to our developers.';
+			records: {
+				provider: string;
+				response: {
+					status: number;
+					data?: any;
+				};
+			}[];
+		};
+	};
+} | {
+	status: 500,
+	message: string;
+	records: {
+		provider: string;
+		response: {
+			status: number;
+			data?: any;
+		};
+	}[];
+};
+```
+
+### Example JSON Response
+
+```json
+{
+    "id": "modr-7gaMSTsOSO4jzqXp8WVyAlcN08OXV",
+    "model": "text-moderation-005",
+    "results": [
+        {
+            "flagged": false,
+            "categories": {
+                "sexual": false,
+                "hate": false,
+                "harassment": false,
+                "self-harm": false,
+                "sexual/minors": false,
+                "hate/threatening": false,
+                "violence/graphic": false,
+                "self-harm/intent": false,
+                "self-harm/instructions": false,
+                "harassment/threatening": false,
+                "violence": false
+            },
+            "category_scores": {
+                "sexual": 0.0005927102,
+                "hate": 2.7723228e-8,
+                "harassment": 7.662779e-8,
+                "self-harm": 2.5427553e-8,
+                "sexual/minors": 0.0000012251222,
+                "hate/threatening": 9.390831e-9,
+                "violence/graphic": 6.338083e-8,
+                "self-harm/intent": 2.9169966e-8,
+                "self-harm/instructions": 1.025219e-7,
+                "harassment/threatening": 3.5038823e-8,
+                "violence": 5.588273e-8
+            }
+        }
+    ],
+    "provider": "FoxGPT",
+    "overwritten": false
+}
+```

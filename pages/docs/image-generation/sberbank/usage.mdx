@@ -1,0 +1,54 @@
+# Using Sberbank Image Generation
+
+## Request
+
+**URL: `https://purgpt.xyz/sberbank/images/generations`**
+
+Request Method: `POST`
+
+### TS Request Interface
+
+```ts
+interface Request {
+	prompt: string | any[];
+	n?: number;
+	size?: `${number}x${number}`;
+	response_format?: string;
+	user?: string;
+};
+```
+
+### Example JSON Request Body
+
+```json
+{
+  "prompt": "cat",
+  "n": 1,
+  "size": "1024x1024"
+}
+```
+
+## Response
+
+### TS Response Interface
+
+```ts
+interface Response {
+	created?: number;
+	data: {
+		url: `https://${string}`
+	}[];
+};
+```
+
+### Example JSON Response
+
+```json
+{
+    "data": [
+        {
+            "url": "https://chimeragpt.adventblocks.cc/api/static/images/7lCGEbEDzuBAmAQX.png"
+        }
+    ]
+}
+```
