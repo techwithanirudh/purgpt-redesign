@@ -35,7 +35,7 @@ const logo = (
 const config: DocsThemeConfig = {
   useNextSeoProps() {
     const { asPath } = useRouter();
-    if (asPath !== "/") {
+    if (asPath != "/") {
       return {
         titleTemplate: "%s – PurGPT",
       };
@@ -98,7 +98,7 @@ const config: DocsThemeConfig = {
     defaultMenuCollapseLevel: 1,
     toggleButton: true,
   },
-  primaryHue: 280,
+  primaryHue: 310,
   project: {
     link: "https://github.com/Sidd-underscore/purgpt-redesign",
   },

@@ -5,7 +5,7 @@
     "title": "Welcome!"
   },
   "getting-started": "Getting Started",
-  "actions-endpoints": "Actions & Endpoints",
+  "endpoints": "Endpoints",
   "error-tracker": "Error Tracker",
   "error-list": "Error List",
   "limits-and-paid-perks": "Ratelimits and Paid Perks",
@@ -14,10 +14,9 @@
     "type": "separator",
     "title": "The API"
   },
-  "audio-transcriptions": "Audio Transcriptions",
-  "chat-completion": "Chat Completion",
-  "embeddings": "Embeddings",
-  "image-generation": "Image Generation",
+  "models": "Gettings Availible Models",
+  "chat-completions": "Chat Completions",
+  "document-analysis": "Document Analysis",
   "special-openai-features": "Special OpenAI Features",
 
   "-- More": {

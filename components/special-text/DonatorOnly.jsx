@@ -1,6 +1,6 @@
 const DonatorOnly = ({ children}) => {
     return (
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-100 to-fuchsia-500">{children}</span>
+        <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-fuchsia-200 via-fuchsia-500 to-fuchsia-200">{children}</span>
     )
 }
 

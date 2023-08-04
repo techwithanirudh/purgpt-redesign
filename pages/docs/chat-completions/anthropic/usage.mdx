@@ -1,0 +1,47 @@
+# Using Anthropic Chat Completion
+
+## Request
+
+**URL: `https://purgpt.xyz/anthropic/chat/completions`**
+
+Request Method: `POST`
+
+## TS Interface
+
+```ts
+interface Request {
+	model: string;
+	messages: {
+		role: 'user' | 'assistant' | 'system' | 'function';
+		content: string;
+		name?: string;
+		function_call?: object;
+	}[];
+	max_tokens_to_sample?: number;
+	temperature?: number;
+	top_p?: number;
+	top_k?: number;
+};
+```
+
+### Example JSON Request Body
+
+```json
+{
+    "model": "claude-instant-1",
+    "messages": [
+        {
+            "role": "user",
+            "content": "hey, who are you?"
+        },
+        {
+            "role": "assistant",
+            "content": "i'm your bro"
+        },
+        {
+            "role": "user",
+            "content": "oh hello my bro!"
+        }
+    ]
+}
+```

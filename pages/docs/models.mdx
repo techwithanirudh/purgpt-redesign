@@ -1,0 +1,163 @@
+import { Tabs, Tab } from "../../components/things-from-nextra-that-arent-importing-nicely/tabs.jsx";
+
+# Getting Availible Models
+
+Sometimes you just want to `GET` our availible models and brag to everyone you can have them for free. Or maybe you don't :/
+
+Anyway, to do so, simply send a `GET` request to `https://purgpt.xyz/<company>/models`.
+
+***Note**: When a word is surrounded by "< " and ">", it should be substituted by a different value. (`<company>`, for example, could be `openai`)*
+
+## Example Request
+
+<Tabs items={["JavaScript/Ajax", "Node.js", "Python", "C#", "cURL/BASH"]}>
+  <Tab>
+   ```js copy filename="index.js"
+    const url = 'https://purgpt.xyz/openai/models'; // openai, FOR EXAMPLE
+
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+          'Authorization': 'Bearer YOUR API KEY',
+      },
+    });
+
+    const text = await response.text();
+
+    console.log(text);
+    ```
+  </Tab>
+  <Tab>
+   ```js copy filename="index.js"
+    const http = require("https");
+
+    const url = 'https://purgpt.xyz/openai/models'; // openai, FOR EXAMPLE
+
+    const options = {
+        method: 'GET',
+        'Authorization': 'Bearer YOUR API KEY',
+    };
+
+    let result = '';
+    const req = http.request(url, options, (res) => {
+        console.log(res.statusCode);
+
+        res.setEncoding('utf8');
+        res.on('data', (chunk) => {
+            result += chunk;
+        });
+
+        res.on('end', () => {
+            console.log(result);
+        });
+    });
+
+    req.on('error', (e) => {
+        console.error(e);
+    });
+
+    req.write(data);
+    req.end();
+    ```
+    </Tab>
+    <Tab>
+   ```py copy filename="index.py"
+    import requests
+    from requests.structures import CaseInsensitiveDict
+
+    url = "https://purgpt.xyz/openai/models" # openai, FOR EXAMPLE
+
+    headers = CaseInsensitiveDict()
+    headers["Authorization"] = "Bearer YOUR API KEY"
+
+    resp = requests.get(url, headers=headers)
+
+    print(resp.status_code)
+    ```
+    </Tab>
+    <Tab>
+     ```cs copy filename="index.cs" 
+    var url = "https://purgpt.xyz/openai/models"; // openai, FOR EXAMPLE
+
+    var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+   
+    httpRequest.Method = "GET";
+    httpRequest.Headers["Authorization"] = "Bearer YOUR API KEY";
+
+    var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+    using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+    {
+         var result = streamReader.ReadToEnd();
+    }
+
+    Console.WriteLine(httpResponse.StatusCode);
+    ```
+    </Tab>
+    <Tab>
+    ```bash copy filename="Console"
+        curl -X GET https://purgpt.xyz/openai/models -H "Authorization: Bearer YOUR API KEY"
+    ```
+    </Tab>
+</Tabs>
+
+## Example Response
+
+### TS Interface
+
+```ts
+type Response = {
+	id: string;
+	owner: string;
+	endpoints: string[];
+	maxTokens: number;
+	freeLimitPerDay: number;
+	donatorLimitsPerDay: {
+		tier1: number;
+		tier2: number;
+		tier3: number;
+		tier4: number;
+	};
+	available: boolean;
+}[];
+```
+
+### JSON Response
+
+```json
+[
+  {
+    "id": "gpt-3.5-turbo",
+    "owner": "openai",
+    "endpoints": [
+      "/openai/chat/completions",
+      "/openai/completions"
+    ],
+    "maxTokens": 4000,
+    "freeLimitPerDay": 2000,
+    "donatorLimitsPerDay": {
+      "tier1": 4000,
+      "tier2": 9000,
+      "tier3": 13000,
+      "tier4": 20000
+    },
+    "available": true
+  },
+  {
+    "id": "gpt-3.5-turbo-16k",
+    "owner": "openai",
+    "endpoints": [
+      "/openai/chat/completions",
+      "/openai/completions"
+    ],
+    "maxTokens": 16000,
+    "freeLimitPerDay": 2000,
+    "donatorLimitsPerDay": {
+      "tier1": 4000,
+      "tier2": 9000,
+      "tier3": 13000,
+      "tier4": 20000
+    },
+    "available": true
+  }
+]
+```

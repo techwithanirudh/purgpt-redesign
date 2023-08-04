@@ -1,0 +1,70 @@
+# Using Document Analysis
+
+
+## Request
+
+**URL: `https://purgpt.xyz/hugging-face/documents/ask`**
+
+Request method: `POST`
+
+### TS Interface
+
+```ts
+interface Request {
+	document: string;
+	prompt: string;
+};
+```
+
+### Example JSON Request Body
+
+```json
+{
+	"document": "https://cdn.discordapp.com/attachments/1119653646498541670/1130524123274158223/image.png",
+	"prompt": "What is the first rule?"
+}
+```
+
+## Response
+
+### TS Interface
+
+```ts
+interface Response {
+	id: string;
+	object: 'document.ask';
+	created: number;
+	model: 'layoutlm-document-qa';
+	choices: [
+		{
+			index: 0;
+			result: {
+				answer: string;
+				score: number;
+			};
+			finish_reason: 'stop';
+		};
+	]
+};
+```
+
+### Example JSON Response
+
+```json
+{
+  "id": "b76bhqmcrzlitsiwubo18",
+  "object": "document.ask",
+  "created": 1690113074,
+  "model": "layoutlm-document-qa",
+  "choices": [
+    {
+      "index": 0,
+      "result": {
+        "answer": "Avoid API Spam:",
+        "score": 0.0024572627153247595
+      },
+      "finish_reason": "stop"
+    }
+  ]
+}
+```

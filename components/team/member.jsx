@@ -1,27 +1,29 @@
-const TeamMember = ({ name, description, socials, avatar }) => {
+const TeamMember = ({ name, description, socials, avatar, pronouns }) => {
   return (
-    <div className="items-center bg-gray-50 rounded-lg shadow dark:border sm:flex dark:bg-white/5 dark:border-white/10">
+    <div className="items-center bg-purple-100 rounded-lg shadow dark:border sm:flex dark:bg-white/5 dark:border-white/10">
         <img
-          className="rounded-t-lg h-full w-full sm:max-w-[25%] md:max-w-[30%] md:rounded-kg sm:rounded-l-lg"
+          className="w-full sm:w-auto sm:h-32 md:h-24 md:m-2 rounded-t-lg sm:rounded-tr-none sm:rounded-l-lg md:rounded-lg"
           src={avatar}
           alt={`${name}'s Avatar`}
         />
-      <div className="px-4 py-2">
+      <div className="px-4 pl-1 py-2">
         <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
           {name}
         </h3>
-        <span className="text-md text-gray-500 dark:text-gray-400">{description}</span>
+        <span className="text-xs text-gray-600 dark:text-gray-300">{pronouns}</span>
+        <br />
+        <span className="text-sm text-gray-500 dark:text-gray-400">{description}</span>
           <ul className="flex space-x-2 w-full mt-2">
             {socials != null &&
               socials.map((social, index) => (
                 <li
                   key={index}
                   title={social.identifier + ' on ' + social.name}
-                  className={`rounded-md ${social.link === null && 'hidden lg:block'}`}
+                  className="rounded-md"
                 >
-                  <a href={social.link} className={`opacity-75 flex ${social.link != null ? 'cursor-pointer hover:opacity-100 transition' : 'cursor-default'} items-center space-x-1 px-1`}>
+                  <a href={social.link} target="_blank" className="opacity-75 flex cursor-pointer hover:opacity-100 transition items-center space-x-1 px-1">
                     <img
-                      className="w-6 h-6 dark:bg-transparent"
+                      className={`w-6 h-6 md:w-4 md:h-4 dark:bg-transparent ${social.link.startsWith("https://github.com") ? ' rounded-full' : null}`}
                       src={social.icon}
                     />
                   </a>

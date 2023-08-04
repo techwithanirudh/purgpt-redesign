@@ -1,0 +1,88 @@
+# Built-In Functions
+
+PurGPT has built-in functions enabled by default for `/openai/chat/completions` endpoint to make the conversation more fluent.
+
+You can disable built-in functions by setting `builtInFunctions` query parameter to `false{:json}`.
+
+PurGPT supports multiple function calls, and called functions will be in the `calledFunctions` field in the response so you can add them to your chat.
+
+## Current built-in functions: 
+
+- `programmer_ai` 
+- `scan_document`
+
+## Example Request
+
+```json
+{
+    "model": "gpt-3.5-turbo",
+    "messages": [
+        {
+            "role": "user",
+            "content": "https://cdn.discordapp.com/attachments/1119653646498541670/1133443454815453255/image.png what is the person's name?"
+        }
+    ]
+}
+```
+
+## Example Response
+
+### TS Interface
+
+```ts
+interface Response {
+	...
+	calledFunctions: [
+		{
+			name: string;
+			arguments: string;
+		},
+		{
+			role: 'function',
+			name: string;
+			content: string;
+		}
+	][];
+};
+```
+
+### JSON Response
+
+```json
+{
+    "id": "chatcmpl-7gFgE6wWzJK8DL0VDKV9TikTijYIQ",
+    "object": "chat.completion",
+    "created": 1690304406,
+    "model": "gpt-3.5-turbo-0613",
+    "choices": [
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "The name of the person in the image is \"A Tolgchu\"."
+            },
+            "finish_reason": "stop"
+        }
+    ],
+    "usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 121,
+        "total_tokens": 136
+    },
+    "provider": "ChimeraGPT",
+    "overwritten": false,
+    "calledFunctions": [
+        [
+            {
+                "name": "scan_document",
+                "arguments": "{\n  \"document\": \"https://cdn.discordapp.com/attachments/1119653646498541670/1133443454815453255/image.png\",\n  \"prompt\": \"Find the person's name.\"\n}"
+            },
+            {
+                "role": "function",
+                "name": "scan_document",
+                "content": "A Tolgchu"
+            }
+        ]
+    ]
+}
+```

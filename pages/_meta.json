@@ -20,6 +20,11 @@
     "href": "/examples",
     "type": "page"
   },
+  "pricing": {
+    "title": "Pricing",
+    "href": "/docs/limits-and-paid-perks",
+    "type": "page"
+  },
 
   "about": {
     "type": "page",
