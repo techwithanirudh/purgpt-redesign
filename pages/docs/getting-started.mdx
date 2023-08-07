@@ -44,7 +44,7 @@ A simple demonstration of using PurGPT, using the `completions` model, is below:
   
     const purgpt = new PurGPT('YOUR API KEY');
   
-    purgpt.openAI.chat.completions({
+    let response = await purgpt.openAI.chat.completions({
         messages: [
             {
                 role: OpenAIChatCompletionsMessageRole.User,
@@ -52,7 +52,9 @@ A simple demonstration of using PurGPT, using the `completions` model, is below:
             }
         ],
         model: OpenAIChatCompletionsModel['GPT-3.5 Turbo'] // ANY DESIRED MODEL
-    }).then(console.log);
+    });
+
+    console.log(response);
     ```
   </Tab>
   <Tab>
@@ -62,7 +64,7 @@ A simple demonstration of using PurGPT, using the `completions` model, is below:
   
     const purgpt = new PurGPT('YOUR API KEY');
   
-    purgpt.openAI.chat.completions({
+    let response = await purgpt.openAI.chat.completions({
         messages: [
             {
                 role: OpenAIChatCompletionsMessageRole.User,
@@ -70,12 +72,14 @@ A simple demonstration of using PurGPT, using the `completions` model, is below:
             }
         ],
         model: OpenAIChatCompletionsModel['GPT-3.5 Turbo'] // ANY DESIRED MODEL
-    }).then(console.log);
+    });
+
+    console.log(response);
     ```
   </Tab>
   <Tab>
     ```js copy filename="index.js"
-    const url = 'https://purgpt.xyz/v1/chat/completions';
+    const url = 'https://purgpt.xyz/openai/chat/completions';
 
     const data = JSON.stringify({
         "messages": [{ "role": "user", "content": "Hello, PurGPT!" }],

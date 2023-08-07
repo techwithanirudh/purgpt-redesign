@@ -10,9 +10,31 @@ Anyway, to do so, simply send a `GET` request to `https://purgpt.xyz/<company>/m
 
 ## Example Request
 
-<Tabs items={["JavaScript/Ajax", "Node.js", "Python", "C#", "cURL/BASH"]}>
+<Tabs items={["purgpt.js (JavaScript)", "purgpt.js (TypeScript)", "JavaScript/Ajax", "Node.js", "Python", "C#", "cURL/BASH"]}>
   <Tab>
-   ```js copy filename="index.js"
+  ```js copy filename="index.js"
+  const PurGPT = require('purgpt.js');
+
+  const purgpt = new PurGPT('YOUR API KEY');
+
+  let response = await purgpt.openAI.models();
+
+  console.log(response);
+  ```
+  </Tab>
+  <Tab>
+  ```ts copy filename="index.ts"
+  import PurGPT from 'purgpt.js';
+
+  const purgpt = new PurGPT('YOUR API KEY');
+
+  let response = await purgpt.openAI.models();
+
+  console.log(response);
+  ```
+  </Tab>
+  <Tab>
+    ```js copy filename="index.js"
     const url = 'https://purgpt.xyz/openai/models'; // openai, FOR EXAMPLE
 
     const response = await fetch(url, {
@@ -28,7 +50,7 @@ Anyway, to do so, simply send a `GET` request to `https://purgpt.xyz/<company>/m
     ```
   </Tab>
   <Tab>
-   ```js copy filename="index.js"
+    ```js copy filename="index.js"
     const http = require("https");
 
     const url = 'https://purgpt.xyz/openai/models'; // openai, FOR EXAMPLE
@@ -61,7 +83,7 @@ Anyway, to do so, simply send a `GET` request to `https://purgpt.xyz/<company>/m
     ```
     </Tab>
     <Tab>
-   ```py copy filename="index.py"
+    ```py copy filename="index.py"
     import requests
     from requests.structures import CaseInsensitiveDict
 
@@ -76,7 +98,7 @@ Anyway, to do so, simply send a `GET` request to `https://purgpt.xyz/<company>/m
     ```
     </Tab>
     <Tab>
-     ```cs copy filename="index.cs" 
+    ```cs copy filename="index.cs" 
     var url = "https://purgpt.xyz/openai/models"; // openai, FOR EXAMPLE
 
     var httpRequest = (HttpWebRequest)WebRequest.Create(url);
@@ -95,7 +117,7 @@ Anyway, to do so, simply send a `GET` request to `https://purgpt.xyz/<company>/m
     </Tab>
     <Tab>
     ```bash copy filename="Console"
-        curl -X GET https://purgpt.xyz/openai/models -H "Authorization: Bearer YOUR API KEY"
+    curl -X GET https://purgpt.xyz/openai/models -H "Authorization: Bearer YOUR API KEY"
     ```
     </Tab>
 </Tabs>
@@ -109,7 +131,7 @@ type Response = {
 	id: string;
 	owner: string;
 	endpoints: string[];
-	maxTokens: number;
+	maxTokens: number | null;
 	freeLimitPerDay: number;
 	donatorLimitsPerDay: {
 		tier1: number;

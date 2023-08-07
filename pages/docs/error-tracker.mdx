@@ -50,14 +50,14 @@ If all providers returned with errors, the API will return with `500 Internal Se
 
 ### Direct Error
 
-#### Server Errors
+#### Provider Errors
 
 ```json
 {
 	"status": 500,
 	"error": {
-	"message": "All of our providers returned with errors. Errors are automatically reported to our developers.",
-	"records": [...]
+	    "message": "All of our providers returned with errors. Errors are automatically reported to our developers.",
+	    "records": [...]
 	}
 }
 ```
