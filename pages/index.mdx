@@ -12,19 +12,29 @@ import Intergration from "../components/features/Intergration.mdx";
 import Uptime from "../components/features/Uptime.jsx";
 import Personalities from "../components/features/Personalities.jsx";
 import Flexible from "../components/features/Flexible.jsx";
+import DocumentScan from "../components/features/DocumentScan.jsx";
+import ImageGen from "../components/features/ImageGen.jsx";
+import { motion } from "framer-motion";
+import { framerAnimations } from "../page-data";
+import CategoryScroll from "../components/features/CategoryScroll.jsx";
 
 <div className="w-full flex justify-center">
   <div className="max-w-[90rem]">
     <div className="m-8 h-screen flex -mt-8 items-center justify-center text-center">
-      <div>
-        <h1 className="md:text-7xl xl:text-9xl text-5xl break-word font-bold md:mx-16 mt-16">
-          Unleash the power of AI, for <span className="free">free</span>
-        </h1>
-        <div className="mt-8 text-lg xl:m-8">
-          Harness AIs from companies like Bing, OpenAI and You.com and more effortlessly, with services like [embeddings](/docs/embeddings-intro), [chat completions](/docs/completions-intro), [image generation](/docs/image-intro), [audio transcription](/docs/transcriptions-intro) and [so much more](/docs/actions-endpoints)!
+      <div className="text-center">
+        <h1 className="md:text-2xl uppercase font-mono xl:text-4xl text-xl font-bold md:mx-16 mt-16">
+          Unleash the power of        
+           </h1>
+          <p className="free md:text-9xl font-bold md:mx-16 mt-4 text-7xl">AI, for free</p>
+        <div className="mt-8 text-lg flex justify-center lg:m-8">
+          <span className="lg:max-w-[50vw]">
+            Harness AIs from companies like OpenAI effortlessly, with services like embeddings, chat completions, image generation, audio transcription and so, so much more!
+          </span>
         </div>
-        [<BigButton className="group inline-flex mt-4">Get Started<span className="group-hover:ml-3 ml-2 transition-all">→</span></BigButton>](/docs/getting-started)
+        [<BigButton className="group inline-flex mt-4">Get Started →</BigButton>](/docs/getting-started)
       
+        <CategoryScroll />
+
         <p className="mt-[10vh] opacity-50 text-sm">scroll to learn more</p>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 opacity-50 mx-auto mt-4 animate-bounce h-6">
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -44,28 +54,77 @@ import Flexible from "../components/features/Flexible.jsx";
 
     <div className="m-8 mt-32 text-center">
       <div className="m-8 md:grid grid-cols-3 grid-flow-row gap-8">
-       
-       <div className="min-h-[365px] text-white xl:row-span-2 text-center overflow-hidden mb-4 p-4 relative focus:shadow-lg transition-all bg-purple-500/10 dark:bg-white/5 border border-purple-500/10 dark:border-white/10 rounded-lg">
-          <Personalities/>
-        </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: '-20px' }}
+          transition={{ duration: Math.min(0.25 + 0 * 0.5, 0.8) }}
+          className="min-h-[365px] text-white xl:row-span-2 text-center overflow-hidden group mb-4 p-4 relative focus:shadow-lg transition-all bg-purple-500/10 dark:bg-white/5 rounded-lg"
+        >
+            <Personalities/>
+        </motion.div>
 
-        <div className="min-h-[365px] col-span-2 text-center overflow-hidden mb-4 p-4 relative focus:shadow-lg transition-all bg-purple-500/10 dark:bg-white/5 border border-purple-500/10 dark:border-white/10 rounded-lg">
-          <Advanced/>
-        </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: '-20px' }}
+          transition={{ duration: Math.min(0.25 + 1 * 0.5, 0.8) }}
+          className="min-h-[365px] col-span-2 text-center overflow-hidden group mb-4 p-4 relative focus:shadow-lg transition-all bg-purple-500/10 dark:bg-white/5 rounded-lg"
+        >
+            <Advanced/>
+        </motion.div>
 
-        <div className="text-center col-span-2 xl:col-span-1 overflow-hidden mb-4 relative focus:shadow-lg transition-all bg-purple-500/10 dark:bg-transparent border border-purple-500/10 dark:border-white/10 rounded-lg">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: '-20px' }}
+          transition={{ duration: Math.min(0.25 + 2 * 0.5, 0.8) }}
+          className="text-center col-span-2 xl:col-span-1 overflow-hidden group mb-4 relative focus:shadow-lg transition-all bg-purple-500/10 dark:bg-white/5 rounded-lg"
+        >
           <Intergration/>
-        </div>
+         </motion.div>
 
-        <div className="text-center overflow-hidden mb-4 p-4 relative focus:shadow-lg transition-all rounded-lg">
+        <motion.div initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: '-20px' }}
+          transition={{ duration: Math.min(0.25 + 3 * 0.5, 0.8) }}
+          className="text-center overflow-hidden group mb-4 p-4 relative focus:shadow-lg transition-all bg-purple-500/10 dark:bg-white/5 rounded-lg"
+        >
           <Uptime/>
-        </div>
+        </motion.div>
 
-        <div className="text-center col-span-3 min-h-[165px] overflow-hidden mb-4 p-4 relative focus:shadow-lg transition-all bg-purple-500/10 dark:bg-white/5 border border-purple-500/10 dark:border-white/10 rounded-lg">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: '-20px' }}
+          transition={{ duration: Math.min(0.25 + 4 * 0.5, 0.8) }}
+          className="text-center col-span-3 min-h-[165px] overflow-hidden group mb-4 p-4 relative focus:shadow-lg transition-all bg-purple-500/10 dark:bg-white/5 rounded-lg"
+        >
           <Flexible/>
-        </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: '-20px' }}
+          transition={{ duration: Math.min(0.25 + 4 * 0.5, 0.8) }}
+          className="text-center col-span-2 overflow-hidden group mb-4 p-4 relative focus:shadow-lg transition-all bg-purple-500/10 dark:bg-white/5 rounded-lg"
+        >
+          <ImageGen/>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: '-20px' }}
+          transition={{ duration: Math.min(0.25 + 4 * 0.5, 0.8) }}
+          className="text-center col-span-1 overflow-hidden group mb-4 p-4 relative focus:shadow-lg transition-all bg-purple-500/10 dark:bg-white/5 rounded-lg"
+        >
+          <DocumentScan/>
+        </motion.div>
 
       </div>
     </div>
+
   </div>
 </div>

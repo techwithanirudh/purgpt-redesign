@@ -27,8 +27,8 @@ const Pricing = () => {
           </div>
           {/* List */}
           <ul role="list" className="mb-2 space-y-4 text-left">
-            {plan.benefits.map((benefit) => (
-              <li className="flex items-center space-x-3">
+            {plan.benefits.map((benefit, index) => (
+              <li key={index} className="flex items-center space-x-3">
                 {/* Icon */}
                 <svg
                   className="flex-shrink-0 w-5 h-5 text-white stroke-black/10"

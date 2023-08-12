@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import FeatureCategory from "../special-text/FeatureCategory";
 
 export default function Flexible() {
   const wordList = [
@@ -8,12 +9,12 @@ export default function Flexible() {
     "an adventurer",
   ];
 
-   const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
   useEffect(() => {
     const wordLoopInterval = setInterval(() => {
       setCurrentWordIndex((prevIndex) => (prevIndex + 1) % wordList.length);
-    }, 1000); 
+    }, 1000);
 
     return () => clearInterval(wordLoopInterval);
   }, []);
@@ -22,7 +23,12 @@ export default function Flexible() {
 
   return (
     <div className="md:flex md:justify-between items-center px-4 h-full">
-      <h3 className="text-4xl font-bold">Incredibly flexible usage</h3>
+      <div className="mt-8 md:mt-0">
+        <FeatureCategory category="chatCompletions" />
+        <FeatureCategory category="completions" />
+        <FeatureCategory category="imageGen" />
+        <h3 className="text-4xl mt-4 font-bold">Incredibly flexible usage</h3>
+      </div>
       <p className="text-xl opacity-50 my-8 md:my-0 md:text-3xl">
         "Be{" "}
         <span className="scrolling-words-container bg-purple-700/50 dark:bg-white/10 px-4 -mb-2 rounded-md inline-block relative overflow-hidden">

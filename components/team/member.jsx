@@ -1,19 +1,19 @@
 const TeamMember = ({ name, description, socials, avatar, pronouns }) => {
   return (
-    <div className="items-center bg-purple-100 rounded-lg shadow dark:border sm:flex dark:bg-white/5 dark:border-white/10">
+    <div className="md:flex items-center text-center sm:text-left bg-purple-100 rounded-lg shadow dark:border sm:flex dark:bg-white/5 dark:border-white/10">
         <img
           className="w-full sm:w-auto sm:h-32 md:h-24 md:m-2 rounded-t-lg sm:rounded-tr-none sm:rounded-l-lg md:rounded-lg"
           src={avatar}
           alt={`${name}'s Avatar`}
         />
-      <div className="px-4 pl-1 py-2">
+      <div className="px-4 pl-3 py-2">
         <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
           {name}
         </h3>
-        <span className="text-xs text-gray-600 dark:text-gray-300">{pronouns}</span>
+        <code className="text-xs !bg-transparent text-gray-600 dark:text-gray-300">{pronouns}</code>
         <br />
-        <span className="text-sm text-gray-500 dark:text-gray-400">{description}</span>
-          <ul className="flex space-x-2 w-full mt-2">
+        <span className="text-sm flex justify-center sm:justify-normal text-gray-500 dark:text-gray-400">{description}</span>
+          <ul className="flex space-x-2 justify-center sm:justify-normal sm:inherit w-full mt-2">
             {socials != null &&
               socials.map((social, index) => (
                 <li

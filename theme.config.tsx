@@ -71,7 +71,7 @@ const config: DocsThemeConfig = {
         />
         <meta name="og:image" content={socialCard} />
         <meta name="apple-mobile-web-app-title" content="PurGPT" />
-        <link rel="icon" href="/purgpt-logo-no-bg.png" type="image/png" />
+        <link rel="icon" href="/purgpt-favicon.png" type="image/png" />
       </>
     );
   },

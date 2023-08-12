@@ -172,7 +172,7 @@ export const awesomePeople = [
         identifier: "oliver___online",
         icon: "/about/the-team/insta.svg",
         link: "https://www.instagram.com/oliver___online",
-      }
+      },
     ],
   },
   {
@@ -202,3 +202,60 @@ export const awesomePeople = [
     ],
   },
 ];
+
+export const framerAnimations = {
+  theTeam: {
+    container: {
+      hidden: { opacity: 1, scale: 0 },
+      visible: {
+        opacity: 1,
+        scale: 1,
+        transition: {
+          delayChildren: 0.3,
+          staggerChildren: 0.2,
+        },
+      },
+    },
+
+    item: {
+      hidden: { y: 20, opacity: 0 },
+      visible: {
+        y: 0,
+        opacity: 1,
+      },
+    },
+  },
+};
+
+export const featureCategories = {
+  general: {
+    color: "text-gray-400",
+    border: "border-gray-400",
+    text: "General",
+    link: "/docs",
+  },
+  documentAnalysis: {
+    color: "text-fuchsia-500",
+    border: "border-fuchsia-400",
+    text: "Document Analysis",
+    link: "/docs/document-analysis",
+  },
+  completions: {
+    color: "text-indigo-500",
+    border: "border-indigo-400",
+    text: "Completions",
+    link: "/docs/completions",
+  },
+  chatCompletions: {
+    color: "text-violet-500",
+    border: "border-violet-400",
+    text: "Chat Completions",
+    link: "/docs/chat-completions",
+  },
+  imageGen: {
+    color: "text-pink-500",
+    border: "border-pink-400",
+    text: "Image Generation",
+    link: "/docs/image-generation",
+  },
+};

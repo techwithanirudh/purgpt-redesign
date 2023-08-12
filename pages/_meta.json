@@ -18,6 +18,7 @@
   "examples": {
     "title": "Examples",
     "href": "/examples",
+    "display": "hidden",
     "type": "page"
   },
   "pricing": {
