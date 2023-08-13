@@ -1,12 +1,12 @@
+import Link from "next/link";
 import { useState } from "react";
 import React from "react";
-import { Helmet } from "react-helmet";
 
-const BigButton = ({ children, className }) => {
+const BigButton = ({ children, className, link }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="relative">
+    <Link href={link} className="relative">
       <div
         className={`fixed inset-0 z-[1000000] bg-black transition-opacity duration-300 ${
           isHovered
@@ -24,7 +24,7 @@ const BigButton = ({ children, className }) => {
       >
         {children}
       </button>
-    </div>
+    </Link>
   );
 };
 
