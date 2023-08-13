@@ -1,4 +1,5 @@
 import { Tabs, Tab } from "../../components/things-from-nextra-that-arent-importing-nicely/tabs.jsx";
+import { Callout } from "nextra/components";
 
 # Getting Availible Models
 
@@ -10,7 +11,9 @@ Anyway, to do so, simply send a `GET` request to `https://purgpt.xyz/<company>/m
 
 ## Example Request
 
-<Tabs items={["purgpt.js (JavaScript)", "purgpt.js (TypeScript)", "JavaScript/Ajax", "Node.js", "Python", "C#", "cURL/BASH"]}>
+<Callout type="info">More info on our NPM package, `purgpt.js`, is coming soon!</Callout>
+
+<Tabs items={["purgpt.js (NodeJS)", "purgpt.js (using import)", "JavaScript/Ajax", "Node.js", "Python", "C#", "cURL/BASH"]}>
   <Tab>
   ```js copy filename="index.js"
   const PurGPT = require('purgpt.js');
