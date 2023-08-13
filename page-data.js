@@ -94,6 +94,7 @@ export const awesomePeople = [
     name: "Mozza",
     pronouns: "he/him",
     avatar: "/about/the-team/mozza.png",
+    banner: "/about/the-team/mozza-banner.png",
     description: "Developer/Admin/God",
     socials: null,
   },
@@ -101,6 +102,7 @@ export const awesomePeople = [
     name: "SpaceDev",
     pronouns: "Any :)",
     avatar: "/about/the-team/spacedev.png",
+    banner: "/about/the-team/spacedev-banner.png",
     description: "Developer/Admin/Exists",
     socials: [
       {
@@ -115,6 +117,7 @@ export const awesomePeople = [
     name: "Tolgchu",
     pronouns: "he/cat",
     avatar: "/about/the-team/tolgchu.png",
+    banner: "/about/the-team/tolgchu-banner.gif",
     description: "Co Owner/Developer/Local Cat",
     socials: [
       {
@@ -159,6 +162,7 @@ export const awesomePeople = [
     name: "Oliver",
     pronouns: "he/him/it/its",
     avatar: "/about/the-team/oliver.png",
+    banner: null,
     description: "Comedic Relief",
     socials: [
       {
@@ -179,6 +183,7 @@ export const awesomePeople = [
     name: "Sidd_",
     pronouns: "she/he/they",
     avatar: "/about/the-team/look-its-the-incredible-sidd!.png",
+    banner: null,
     description: "Developer/Fullstack",
     socials: [
       {

@@ -1,6 +1,6 @@
 const TeamMember = ({ name, description, socials, avatar, pronouns }) => {
   return (
-    <div className="md:flex items-center text-center sm:text-left bg-purple-100 rounded-lg shadow dark:border sm:flex dark:bg-white/5 dark:border-white/10">
+    <div className={`md:flex items-center text-center sm:text-left bg-purple-100 rounded-lg shadow dark:border sm:flex dark:bg-white/5 dark:border-white/10`}>
         <img
           className="w-full sm:w-auto sm:h-32 md:h-24 md:m-2 rounded-t-lg sm:rounded-tr-none sm:rounded-l-lg md:rounded-lg"
           src={avatar}

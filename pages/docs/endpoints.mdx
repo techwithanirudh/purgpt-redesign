@@ -6,28 +6,58 @@ import { Callout } from 'nextra/components'
     Some of these endpoints are still in developpent! Refer to their docs to know which of these work.
 </Callout>
 
-As described previously, PurGPT functions through requests to URLs. The way a URL is constructed is through the following format: https://purgpt.xyz/ `company` [/](https://purgpt.xyz) `product`.
+As described previously, PurGPT functions through requests to URLs. The way a URL is constructed is through the following format: https://purgpt.xyz/ `owner` [/](https://purgpt.xyz) `product`.
 
 Below is the full list of endpoints we offer, as well as their descriptions & URLs.
 
-***Note**: When a word is surrounded by "< " and ">", it should be substituted by a different value. (`<company>`, for example, could be `openai`)*
+***Note**: When a word is surrounded by "< " and ">", it should be substituted by a different value. (`<owner>`, for example, could be `openai`)*
 
 ## General
 
 |      **Title**       |              **Link**                       |                              **Description**                                 |
 |------------------|-----------------------------------------|----------------------------------------------------------------------------|
-|    Models    | `https://purgpt.xyz/<company>/models`          | Get the list of available models, endpoints and so much more from a certain `<company>` (Companies listed below)              |
+|    Models    | `https://purgpt.xyz/<owner>/models`          | Get the list of available models, endpoints and so much more from a certain `<owner>` (`Owners` listed below)              |
 
 
+## Chat Completion
 
+Engage in interactive conversations with AI using the chat completion endpoint.
 
-| Chat Completion | `https://purgpt.xyz/v1/chat/completions` | Engage in interactive conversations with AI using chat completion endpoint. |
-|       Edits    | `https://purgpt.xyz/v1/edits`           | Make edits to the generated text by AI and refine the output.               |
-| Image Generation | `https://purgpt.xyz/v1/images/generations` | Generate AI-generated images based on provided input.                     |
-|     Embeddings | `https://purgpt.xyz/v1/embeddings`       | Obtain embeddings for text or other inputs to represent them numerically.   |
-| Audio Transcriptions | `https://purgpt.xyz/v1/audio/transcriptions` | Transcribe audio files into text format using AI-powered audio transcription. |
-| Engine Embeddings | `https://purgpt.xyz/v1/engines/text-embedding-ada-002/embeddings` | Retrieve embeddings specifically from the *`text-embedding-ada-002`* engine. |
-| Engine Text Completions | `https://purgpt.xyz/v1/engines/` `[MODEL_NAME]` `/completions` | Generate text completions using the specified model. Replace *`MODEL_NAME`* with the desired model's name. |
-|     Moderations | `https://purgpt.xyz/v1/moderations`     | Access moderation features for controlling and managing generated content. |
-| You.com  | `https://purgpt.xyz/v1/you`              | Have a chat with the You.com AI.                                          |
-|  BingAI  | `https://purgpt.xyz/v1/bing`             | Try out BingAI.                                                           |
+|      **Owner**       |              **Link**                   |              **Docs link**           |
+|----------------------|-----------------------------------------|--------------------------------------|
+| OpenAI | `https://purgpt.xyz/openai/chat/completions` |  [Docs](/docs/chat-completions/openai/usage)
+| Anthropic | `https://purgpt.xyz/anthropic/chat/completions` |  [Docs](/docs/chat-completions/anthropic/usage)
+| Llama | `https://purgpt.xyz/llama/chat/completions` |  [Docs](/docs/chat-completions/llama/usage)
+
+## Completion
+
+Chat completions, but without the "chat" part: They're just trained to complete, not to chat.
+
+|      **Owner**       |              **Link**                   |              **Docs link**           |
+|----------------------|-----------------------------------------|--------------------------------------|
+| Google | `https://purgpt.xyz/google/completions` |  [Docs](/docs/completions/google/usage)
+| Ora | `https://purgpt.xyz/ora/completions` |  [Docs](/docs/completions/ora/usage)
+
+## Document Analysis
+
+Analyze documents (images and PDFs) by asking questions.
+
+|      **Owner**       |              **Link**                   |              **Docs link**           |
+|----------------------|-----------------------------------------|--------------------------------------|
+| Hugging Face (impira) | `https://purgpt.xyz/hugging-face/documents/scan` |  [Docs](http://localhost:3000/docs/document-analysis/usage)
+
+## Image Generation
+
+Generate AI-generated images based on provided input.
+
+|      **Owner**       |              **Link**                   |              **Docs link**           |
+|----------------------|-----------------------------------------|--------------------------------------|
+| Sberbank | `https://purgpt.xyz/v1/images/generations` |             [Docs](/docs/image-generation/sberbank/usage)         |
+
+## Moderations
+
+Scan text to make sure it's Safe For Work and doesn't contain anything inapropriate. 
+
+|      **Owner**       |              **Link**                   |              **Docs link**           |
+|----------------------|-----------------------------------------|--------------------------------------|
+|     Moderations | `https://purgpt.xyz/openai/moderations`     |  [Docs](/docs/moderations/usage)

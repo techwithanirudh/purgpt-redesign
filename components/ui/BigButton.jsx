@@ -6,10 +6,12 @@ const BigButton = ({ children, className }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-<div className="relative">
+    <div className="relative">
       <div
         className={`fixed inset-0 z-[1000000] bg-black transition-opacity duration-300 ${
-          isHovered ? "opacity-50 pointer-events-none" : "opacity-0 pointer-events-none"
+          isHovered
+            ? "opacity-50 pointer-events-none"
+            : "opacity-0 pointer-events-none"
         }`}
       />
       <button

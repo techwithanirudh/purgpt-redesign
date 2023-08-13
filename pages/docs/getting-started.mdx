@@ -18,7 +18,7 @@ Think you're worthy to start with PurGPT? We sure do! If you agree with us, simp
 
 1. Head over to the [Discord server](https://discord.gg/9PU85As8Pd)
 
-2. Once there, click into the <DiscordChannel>👾 | commands</DiscordChannel> channel
+2. Once there, click into the <DiscordChannel link="https://discord.com/channels/1117511140440821852/1117527621459267694">👾 | commands</DiscordChannel> channel
 
 3. Run the `/key` command
 
@@ -36,7 +36,9 @@ The way that one interacts with PurGPT is, currently, through POST requests (whe
 
 A simple demonstration of using PurGPT, using the `completions` model, is below:
 
-<Tabs items={["purgpt.js (JavaScript)", "purgpt.js (TypeScript)", "JavaScript/Ajax", "Node.js", "Python", "C#", "cURL/BASH"]}>
+<Callout type="info">More info on our NPM package, `purgpt.js`, is coming soon!</Callout>
+
+<Tabs items={["purgpt.js (NodeJS)", "purgpt.js (using import)", "JavaScript/Ajax", "Node.js", "Python", "C#", "cURL/BASH"]}>
   <Tab>
     ```js copy filename="index.js"
     const PurGPT = require('purgpt.js');
@@ -219,7 +221,5 @@ Returns:
 PurGPT is simple: all you have to do is send a POST request to a URL which, depending on your desired company (openai) and product (completions), will give you your desired output.
 
 Of course, you can't possibly be able to read our minds, so the URLs, as well as their descriptions, will be described in the next sections.
-
-Another thing to note is that PurGPT request bodies match somewhat __exactly__ (we have certain things that we provide that you can add on, read the docs to find out what!) the same thing that you would send over to OpenAI's API. This means that you can always use their [API Reference](https://platform.openai.com/docs/api-reference/introduction) to find information about what should be in the request body.
 
 </Steps>

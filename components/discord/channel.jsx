@@ -1,6 +1,8 @@
-const DiscordChannel = ({ children }) => {
+import Link from "next/link";
+
+const DiscordChannel = ({ children, link }) => {
   return (
-    <span className="bg-black/50 dark:bg-[#36373d] text-white text-sm inline-flex items-center p-[4px_6px] relative rounded-[4px] cursor-pointer select-none transition hover:bg-black/25 dark:hover:bg-[#404249]">
+    <Link href={link} className="bg-black/50 dark:bg-[#36373d] text-white text-sm inline-flex underline hover:no-underline items-center p-[4px_6px] relative rounded-[4px] cursor-pointer select-none transition hover:bg-black/25 dark:hover:bg-[#404249]">
       <svg width="16" height="16" viewBox="0 0 24 24" className="mr-1">
         <path
           fill="currentColor"
@@ -12,7 +14,7 @@ const DiscordChannel = ({ children }) => {
         ></path>
       </svg>
       {children}
-    </span>
+    </Link>
   );
 };
 
