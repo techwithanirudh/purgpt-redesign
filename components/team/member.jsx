@@ -1,4 +1,6 @@
-const TeamMember = ({ name, description, socials, avatar, pronouns }) => {
+import BigButton from "../ui/BigButton";
+
+const TeamMember = ({ name, description, socials, avatar, pronouns, sponsor }) => {
   return (
     <div className={`md:flex items-center text-center sm:text-left bg-purple-100 rounded-lg shadow dark:border sm:flex dark:bg-white/5 dark:border-white/10`}>
         <img
@@ -8,7 +10,7 @@ const TeamMember = ({ name, description, socials, avatar, pronouns }) => {
         />
       <div className="px-4 pl-3 py-2">
         <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-          {name}
+          {name} {sponsor && <BigButton className="text-sm mb-0" link={sponsor}>Sponsor!!!</BigButton>}
         </h3>
         <code className="text-xs !bg-transparent text-gray-600 dark:text-gray-300">{pronouns}</code>
         <br />

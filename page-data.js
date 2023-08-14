@@ -119,6 +119,7 @@ export const awesomePeople = [
     avatar: "/about/the-team/tolgchu.png",
     banner: "/about/the-team/tolgchu-banner.gif",
     description: "Co Owner/Developer/Local Cat",
+    sponsor: "https://github.com/sponsors/Tolga1452?frequency=recurring",
     socials: [
       {
         name: "GitHub",

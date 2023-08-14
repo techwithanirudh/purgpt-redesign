@@ -16,6 +16,7 @@ const Team = () => {
           <motion.div variants={framerAnimations.theTeam.item} className="max-w-screen" key={index}>
             <TeamMember
               name={person.name}
+              sponsor={person.sponsor}
               description={person.description}
               avatar={person.avatar}
               socials={person.socials}
