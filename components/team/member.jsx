@@ -10,7 +10,8 @@ const TeamMember = ({ name, description, socials, avatar, pronouns, sponsor }) =
         />
       <div className="px-4 pl-3 py-2">
         <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-          {name} {sponsor && <BigButton className="text-sm mb-0" link={sponsor}>Sponsor!!!</BigButton>}
+          {name} 
+          {sponsor && <BigButton className="text-sm !sm:m-0 !sm:mx-0 !my-2" link={sponsor}>Sponsor!!!</BigButton>}
         </h3>
         <code className="text-xs !bg-transparent text-gray-600 dark:text-gray-300">{pronouns}</code>
         <br />
