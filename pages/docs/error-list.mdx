@@ -4,16 +4,16 @@ You may encounter errors when dealing with our API. Below is a table with the mo
 
 | **Error**           | **Description**                                                                                                                                                    |
 |-----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 400 Bad Request | The request could not be understood or was missing required parameters.                                                                                        |
-| 401 Unauthorized | Authentication credentials are missing, invalid, or expired, and the request cannot be processed without proper authentication.                                |
-| 403 Forbidden | The request is valid, but the server refuses to respond to it. The client does not have the necessary permissions to access the requested resource.         |
-| 404 Not Found | The requested resource could not be found on the server. It may have been moved or deleted, or the URL might be incorrect.                                    |
-| 405 Method Not Allowed | The HTTP method (GET, POST, PUT, DELETE, etc.) used in the request is not supported for the specified resource.                                         |
-| 429 Too Many Requests | The user has sent too many requests in a given amount of time, and the server is rate-limiting the client to prevent abuse.                                 |
-| 500 Internal Server Error | An unexpected condition was encountered on the server, and no more specific message is suitable to convey the exact nature of the problem. __Usually occurs when all our providers return with errors.__               |
-| 502 Bad Gateway | The server acting as a gateway or proxy received an invalid response from the upstream server while trying to fulfill the request.                        |
-| 503 Service Unavailable | The server is not ready to handle the request. Common causes include maintenance, temporary overloading, or server downtime.                                |
-| 504 Gateway Timeout | The server acting as a gateway or proxy did not receive a timely response from the upstream server or another auxiliary server while trying to load the URL. |
+| `400` Bad Request | Endpoint not found or not available for this model, personality only available for the `/openai/chat/completions` endpoint or Model is blocked by personality. Available models for this personality: (...)                                                                                        |
+| `401` Unauthorized | Authentication credentials are missing, invalid, or expired: **check your API key**                                |
+| `403` Forbidden | The request is valid, but the client does not have the necessary permissions to access the requested resource.         |
+| `404` Not Found | The requested resource could not be found on the server: **model not found**, or **personality not found.**                                   |
+| `405` Method Not Allowed | The `HTTP` method (`GET`, `POST`, `PUT`, `DELETE`, etc.) used in the request is not supported for the specified resource.                                         |
+| `429` Too Many Requests | The user has sent too many requests, and the server is rate-limiting the client to prevent abuse.                                 |
+| `500` Internal Server Error | An unexpected condition was encountered on the server, and no more specific message is suitable to convey the exact nature of the problem. __Usually occurs when all our providers return with errors.__               |
+| `502` Bad Gateway | The server acting as a gateway or proxy received an invalid response from the upstream server while trying to fulfill the request.                        |
+| `503` Service Unavailable | The server is not ready to handle the request: **Model is not available at the moment.**                                |
+| `504` Gateway Timeout | The server acting as a gateway or proxy did not receive a timely response from the upstream server or another auxiliary server while trying to load the URL. |
 
 There also exists a short message when an error occurs that should also help you:
 
