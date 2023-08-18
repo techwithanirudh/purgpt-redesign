@@ -1,10 +1,6 @@
 {
    "index": "Introduction",
-
-   "-- Companies": {
-    "type": "separator",
-    "title": "Companies"
-  },
+   
    "openai": "OpenAI",
    "anthropic": "Anthropic",
    "llama": "Llama",
