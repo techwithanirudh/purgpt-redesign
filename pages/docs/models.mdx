@@ -131,18 +131,18 @@ Anyway, to do so, simply send a `GET` request to `https://purgpt.xyz/<company>/m
 
 ```ts
 type Response = {
-	id: string;
-	owner: string;
-	endpoints: string[];
-	maxTokens: number | null;
-	freeLimitPerDay: number;
-	donatorLimitsPerDay: {
-		tier1: number;
-		tier2: number;
-		tier3: number;
-		tier4: number;
+	id: string; // ID of the model
+	owner: string; // Who wons the model?
+	endpoints: string[]; // Available endpoints for the model
+	maxTokens: number | null; // Maximum token count that the model can generate for each response
+	freeLimitPerDay: number; // Free usage count of the model for each day. If null, the model has not specific usage limits and you can use it anytime within your daily total limit.
+	donatorLimitsPerDay: { // Donator usage count of the model for each day. Similar to freeLimitPerDay.
+		tier1: number; // Limit for Tier 1
+		tier2: number; // Limit for Tier 2
+		tier3: number; // Limit for Tier 3
+		tier4: number; // Limit for Tier 4
 	};
-	available: boolean;
+	available: boolean; // The availability of the model
 }[];
 ```
 
