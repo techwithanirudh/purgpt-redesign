@@ -18,6 +18,8 @@ Request Method: `POST`
 interface Request {
 	model?: string;
 	personality?: string;
+	primaryProvider?: 'ChimeraGPT' | 'FoxGPT' | 'Skailar' | 'Pawan' | 'Churchless';
+	
 	messages: {
 		role: 'system' | 'user' | 'assistant' | 'function';
 		content: string;
@@ -41,7 +43,7 @@ interface Request {
 	function_call?: 'none' | 'auto' | {
 		name: string;
 	};
-	temperature?: number;
+	temperature?: number; 
 	top_p?: number;
 	n?: number;
 	stream?: boolean;
@@ -53,6 +55,23 @@ interface Request {
 	user?: string;
 };
 ```
+
+### Request API Reference
+
+<Callout type="warning" emoji="⚠️">
+    Refer to [OpenAI's odcs](https://platform.openai.com/docs/api-reference/chat/create) to learn more about all the paramters after `primaryProvider`! 
+</Callout>
+
+| **Parameter**    | **Type** (check [TS Interface](#ts-request-interface)) | **Description**                                                                                                      |
+|------------------|--------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| `model`          | `string`                                           | The model you would like to use. Refer to the [Getting Available Models](/docs/models) page for more information.           |
+| `personality`    | `string`                                           | Specifies the personality for the conversation. Refer to the [Getting Personalities](/docs/chat-completions/personalities/getting-personalities) page for more details.    |
+| `primaryProvider`| `'ChimeraGPT'{:ts}` &#124; `'FoxGPT'{:ts}` &#124; ...         | The primary provider to use for generating responses. The API will try this provider first. If it returns with any error(s), the API will try other providers!                   |
+| `messages`       | `array` (of objects)                                | An array of messages in the conversation. See the [example request body](#example-json-request-body) for the message structure.             |
+| `messages.role`  | `'system'{:ts}` &#124; `'user'{:ts}` &#124; ...              | The role of the message sender.                                          |
+| `messages.content`| `string`                                          | The content of the message.                                                                                  |
+| `messages.name`  | `string`                                           | (Optional) The name associated with the message sender.                                                      |
+| `messages.function_call` | `object`                                | (Optional) Details of a function call in the message.                                                        |
 
 ### Example JSON Request Body
 
@@ -129,6 +148,49 @@ interface Response {
 	}[];
 };
 ```
+
+### Response API Reference
+
+| Property           | Type                                                                                            | Description                                                                                             |
+|--------------------|-------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| `id`               | `string`                                                                                          | The ID of the chat completion response.                                                                |
+| `object`           | `'chat.completion'{:ts}`                                                                              | The object type of the response.                                                                       |
+| `created`          | `number`                                                                                          | Timestamp of when the response was created.                                                            |
+| `model`            | `string`                                                                                          | The model used for generating the response.                                                            |
+| `choices`          | `array` (of objects)                                                                                | An array of choices containing generated message, index, and finish reason.                          |
+| `choices.index`    | `number`                                                                                          | Index of the choice in the array.                                                                     |
+| `choices.message`  | `object`                                                                                          | The generated message by the assistant.                                                               |
+| `choices.message.role` | `'assistant'{:ts}`                                                                               | The role of the generated message (always 'assistant').                                                |
+| `choices.message.content` | `string`                                                                      | The content of the generated message.                                                                 |
+| `choices.finish_reason` | `any`                                                                         | The reason why the choice was finished.                                                               |
+| `usage`            | `object`                                                                                          | Usage information about tokens.                                                                       |
+| `usage.prompt_tokens` | `number`                                                                                      | Number of tokens in the prompt.                                                                       |
+| `usage.completion_tokens` | `number`                                                                               | Number of tokens in the completion.                                                                   |
+| `usage.total_tokens` | `number`                                                                                      | Total number of tokens in the response.                                                                |
+| `overwritten`      | `boolean`                                                                                         | Indicates if the response was overwritten.                                                             |
+| `provider`         | `string`                                                                                          | The provider used for generating the response.                                                        |
+| `cache`            | `object`                                                                                          | (Optional) Cache information.                                                                         |
+| `cache.status`     | `500`                                                                                             | Cache status.                                                                                          |
+| `cache.error`      | `object`                                                                                          | Cache error details.                                                                                   |
+| `cache.error.message` | `string`                                                                           | Cache error message.                                                                                   |
+| `cache.error.records` | `array` (of objects)                                                                 | Records of providers and their error responses.                                                        |
+| `cache.error.records.provider` | `string`                                                                | Provider that returned an error.                                                                       |
+| `cache.error.records.response` | `object`                                                           | Response details of the provider error.                                                                |
+| `cache.error.records.response.status` | `number`                                                     | Status code of the provider error response.                                                            |
+| `cache.error.records.response.data` | `any`                                                          | (Optional) Data associated with the provider error.                                                    |
+| `calledFunctions`  | `array` (of objects)                                                                                | Array of called function details.                                                                      |
+| `calledFunctions[].name` | `string`                                                                | Name of the called function.                                                                           |
+| `calledFunctions[].arguments` | `string`                                                           | Arguments of the called function.                                                                      |
+| `calledFunctions[].role` | `'function'{:ts}`                                                                                   | (Optional) Role of the called function (if applicable).                                               |
+| `calledFunctions[].content` | `string`                                                           | (Optional) Content of the called function (if applicable).                                            |
+| `status`           | `500`                                                                                             | Status code indicating an error in the response.                                                      |
+| `message`          | `string`                                                                                          | Error message.                                                                                         |
+| `records`          | `array` (of objects)                                                                                | Records of providers and their error responses.                                                        |
+| `records.provider` | `string`                                                                                          | Provider that returned an error.                                                                       |
+| `records.response` | `object`                                                                                          | Response details of the provider error.                                                                |
+| `records.response.status` | `number`                                                            | Status code of the provider error response.                                                            |
+| `records.response.data` | `any`                                                                | (Optional) Data associated with the provider error.                                                    |
+
 
 ### Example JSON Response
 

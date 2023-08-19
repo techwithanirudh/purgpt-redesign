@@ -9,5 +9,6 @@
     "type": "separator",
     "title": "Features"
   },
-   "personalities": "Personalities"
+   "personalities": "Personalities",
+   "auto": "Automatic Settings"
 }
