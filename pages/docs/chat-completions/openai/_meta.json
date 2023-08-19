@@ -1,4 +1,5 @@
 {
     "usage": "Using OpenAI Chat Completion",
-    "builtin-functions": "Built-In Functions"
+    "builtin-functions": "Built-In Functions",
+    "streaming": "Streaming"
 }

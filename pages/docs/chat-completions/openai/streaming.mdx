@@ -1,0 +1,207 @@
+import { Callout } from 'nextra/components'
+
+# OpenAI Chat Completions Streaming
+
+PurGPT supports streaming, which powers the "typing" feel of ChatGPT, and can improve response speed. You can just set the `stream` field to `true{:json}` to use streaming.
+
+## Request
+
+### Supported URLs
+
+- `/openai/chat/completions`
+- `/third-party/chat/completions`
+
+### TS `Stream` Interface
+
+```ts
+interface Stream {
+	stream?: boolean;
+};
+```
+
+### Example JSON Request Body
+
+```json copy {9}
+{
+    "model": "gpt-3.5-turbo",
+    "messages": [
+        {
+            "role": "user",
+            "content": "who are you? answer with 3 words"
+        }
+    ],
+    "stream": true
+}
+```
+
+## Response
+
+### Example Responses (Encoded)
+
+<Callout type="info" emoji="">
+    1. The TypeScript response interface is the same as the previous page's
+    2. Look at the highlighted portion of the following code snippets!  
+</Callout>
+
+```json {15}
+{
+    "id": "chatcmpl-QXlha2FBbmROaXhpZUFyZUF3ZXNvbWUK",
+    "object": "chat.completion",
+    "created": 0,
+    "model": "gpt-3.5-turbo-0301",
+    "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+    },
+    "choices": [
+        {
+            "index": 0,
+            "delta": {
+                "content": "AI la"
+            },
+            "finish_reason": null
+        }
+    ],
+    "provider": "Churchless",
+    "overwritten": false,
+    "cache": {
+        "status": 500,
+        "error": {
+            "message": "Some of our providers returned with errors. Errors are automatically reported to our developers.",
+            "records": [...]
+        }
+    },
+    "calledFunctions": []
+}
+```
+
+```json {15}
+{
+    "id": "chatcmpl-QXlha2FBbmROaXhpZUFyZUF3ZXNvbWUK",
+    "object": "chat.completion",
+    "created": 0,
+    "model": "gpt-3.5-turbo-0301",
+    "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+    },
+    "choices": [
+        {
+            "index": 0,
+            "delta": {
+                "content": "nguag"
+            },
+            "finish_reason": null
+        }
+    ],
+    "provider": "Churchless",
+    "overwritten": false,
+    "cache": {
+        "status": 500,
+        "error": {
+            "message": "Some of our providers returned with errors. Errors are automatically reported to our developers.",
+            "records": [...]
+        }
+    },
+    "calledFunctions": []
+}
+```
+
+```json {15}
+{
+    "id": "chatcmpl-QXlha2FBbmROaXhpZUFyZUF3ZXNvbWUK",
+    "object": "chat.completion",
+    "created": 0,
+    "model": "gpt-3.5-turbo-0301",
+    "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+    },
+    "choices": [
+        {
+            "index": 0,
+            "delta": {
+                "content": "e mod"
+            },
+            "finish_reason": null
+        }
+    ],
+    "provider": "Churchless",
+    "overwritten": false,
+    "cache": {
+        "status": 500,
+        "error": {
+            "message": "Some of our providers returned with errors. Errors are automatically reported to our developers.",
+            "records": [...]
+        }
+    },
+    "calledFunctions": []
+}
+```
+
+```json {15}
+{
+    "id": "chatcmpl-QXlha2FBbmROaXhpZUFyZUF3ZXNvbWUK",
+    "object": "chat.completion",
+    "created": 0,
+    "model": "gpt-3.5-turbo-0301",
+    "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+    },
+    "choices": [
+        {
+            "index": 0,
+            "delta": {
+                "content": "el."
+            },
+            "finish_reason": null
+        }
+    ],
+    "provider": "Churchless",
+    "overwritten": false,
+    "cache": {
+        "status": 500,
+        "error": {
+            "message": "Some of our providers returned with errors. Errors are automatically reported to our developers.",
+            "records": [...]
+        }
+    },
+    "calledFunctions": []
+}
+```
+
+```json {14}
+{
+    "id": "chatcmpl-QXlha2FBbmROaXhpZUFyZUF3ZXNvbWUK",
+    "object": "chat.completion",
+    "created": 0,
+    "model": "gpt-3.5-turbo-0301",
+    "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+    },
+    "choices": [
+        {
+            "index": 0,
+            "delta": {},
+            "finish_reason": null
+        }
+    ],
+    "provider": "Churchless",
+    "overwritten": false,
+    "cache": {
+        "status": 500,
+        "error": {
+            "message": "Some of our providers returned with errors. Errors are automatically reported to our developers.",
+            "records": [...]
+        }
+    },
+    "calledFunctions": []
+}
+```
