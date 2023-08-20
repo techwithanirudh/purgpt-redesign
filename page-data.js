@@ -264,4 +264,10 @@ export const featureCategories = {
     text: "Image Generation",
     link: "/docs/image-generation",
   },
+  moderations: {
+    color: "text-emerald-500",
+    border: "border-emerald-400",
+    text: "Moderations",
+    link: "/docs/moderations",
+  },
 };
