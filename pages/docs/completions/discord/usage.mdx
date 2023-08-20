@@ -1,8 +1,8 @@
-# Using Ora Completion
+# Using Discord Completion
 
 ## Request
 
-**URL: `https://purgpt.xyz/ora/completions`**
+**URL: `https://purgpt.xyz/discord/completions`**
 
 Request Method: `POST`
 
@@ -10,8 +10,6 @@ Request Method: `POST`
 
 ```ts
 interface Request {
-	model?;
-	conversationId?: string;
 	prompt: string;
 };
 ```
@@ -20,8 +18,7 @@ interface Request {
 
 ```json
 {
-  "model": "gpt-3.5-turbo",
-  "prompt": "Hello, how are you?"
+  "prompt": "why do dogs hate me so much?!"
 }
 ```
 
@@ -32,7 +29,7 @@ interface Request {
 ```ts
 interface Response {
 	id: string;
-	object: 'chat.completion';
+	object: 'completion';
 	created: number;
 	model: string;
 	choices: {
@@ -40,10 +37,11 @@ interface Response {
 		message: {
 			role: 'assistant';
 			content: string;
+            referenceId: string;
 		};
 		finish_reason: any;
 	}[];
-	usage: {
+	leftUsages: {
 		prompt_tokens: number;
 		completion_tokens: number;
 		total_tokens: number;
@@ -63,17 +61,6 @@ interface Response {
 			}[];
 		};
 	};
-	calledFunctions: [
-		{
-			name: string;
-			arguments: string;
-		},
-		{
-			role: 'function';
-			name: string;
-			content: string;
-		}
-	][];
 } | {
 	status: 500,
 	message: string;
@@ -91,28 +78,21 @@ interface Response {
 
 ```json
 {
-    "id": "chatcmpl-QXlha2FBbmROaXhpZUFyZUF3ZXNvbWUK",
-    "object": "chat.completion",
-    "created": 0,
-    "model": "gpt-3.5-turbo",
-    "usage": {
-        "prompt_tokens": 0,
-        "completion_tokens": 0,
-        "total_tokens": 0
-    },
-    "choices": [
-        {
-            "index": 0,
-            "message": {
-                "role": "assistant",
-                "content": "Hello! As an AI language model, I don't have feelings, but I'm here and ready to assist you. How can I help you today?"
-            },
-            "finish_reason": null
-        }
-    ],
-    "provider": "Churchless",
-    "overwritten": false,
-    "cache": {
+    "id": "a64lalc4l48f6k1346p40h",
+    "object": "completion",
+    "created": 1692565230,
+    "model": "clyde",
+    "choices": [{
+        "index": 0,
+        "message": {
+            "role": "assistant",
+            "content": "maybe you smell like cats 🐱",
+            "referenceId": "1142926154270003406::55616"
+        },
+        "finish_reason": "stop"
+    }],
+    "leftUsages": {},
+	"cache": {
         "status": 500,
         "error": {
             "message": "Some of our providers returned with errors. Errors are automatically reported to our developers.",

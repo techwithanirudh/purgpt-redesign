@@ -31,7 +31,7 @@ interface Request {
 ```ts
 interface Response {
 	id: string;
-	object: 'chat.completion';
+	object: 'completion';
 	created: number;
 	model: string;
 	choices: {
@@ -42,7 +42,7 @@ interface Response {
 		};
 		finish_reason: any;
 	}[];
-	usage: {
+	leftUsages: {
 		prompt_tokens: number;
 		completion_tokens: number;
 		total_tokens: number;
@@ -62,17 +62,6 @@ interface Response {
 			}[];
 		};
 	};
-	calledFunctions: [
-		{
-			name: string;
-			arguments: string;
-		},
-		{
-			role: 'function';
-			name: string;
-			content: string;
-		}
-	][];
 } | {
 	status: 500,
 	message: string;
@@ -90,28 +79,20 @@ interface Response {
 
 ```json
 {
-    "id": "chatcmpl-QXlha2FBbmROaXhpZUFyZUF3ZXNvbWUK",
-    "object": "chat.completion",
-    "created": 0,
+    "id": "anr8pycazxmyqfcmwwp8dg",
+    "object": "completion",
+    "created": 1692564194,
     "model": "bard",
-    "usage": {
-        "prompt_tokens": 0,
-        "completion_tokens": 0,
-        "total_tokens": 0
-    },
-    "choices": [
-        {
-            "index": 0,
-            "message": {
-                "role": "assistant",
-                "content": "Hello! As an AI language model, I don't have feelings, but I'm here and ready to assist you. How can I help you today?"
-            },
-            "finish_reason": null
-        }
-    ],
-    "provider": "Churchless",
-    "overwritten": false,
-    "cache": {
+    "choices": [{
+        "index": 0,
+        "message": {
+            "role": "assistant",
+            "text": "Hello! I am doing well, thank you for asking. I am excited to be able to help people with their tasks and answer their questions. How are you doing today?"
+        },
+        "finish_reason": "stop"
+    }],
+    "leftUsages": {},
+	"cache": {
         "status": 500,
         "error": {
             "message": "Some of our providers returned with errors. Errors are automatically reported to our developers.",
