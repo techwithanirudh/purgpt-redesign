@@ -26,7 +26,7 @@ function DocumentScan() {
           </div>
           <div className="relative flex flex-col">
             <div className="flex flex-grow flex-col">
-              <p className="text-left text-gray-400 dark:text-white/50 ml-2">
+              <p className="text-left text-gray-500 dark:text-white/50 ml-2">
                 USER
               </p>
               <div className="ml-2 flex flex-col items-start gap-3 overflow-x-auto text-left whitespace-pre-wrap break-words">

@@ -2,7 +2,7 @@ import FeatureCategory from "../special-text/FeatureCategory";
 
 export default function Personalities() {
   return (
-    <div className="w-full h-full flex items-center justify-center absolute top-0 left-0 bg-gradient-to-br from-red-500 via-emerald-800 to-violet-800 animate-personalities">
+    <div className="w-full h-full flex items-center justify-center absolute top-0 left-0 bg-gradient-to-br from-red-300 dark:from-red-500 to-violet-600 dark:to-violet-800 animate-personalities">
       <div className="m-4 space-y-2">
         <FeatureCategory category="completions" />
         <h3 className="font-bold text-4xl">Make it your own</h3>

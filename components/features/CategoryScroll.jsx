@@ -23,7 +23,7 @@ const CategoryScroll = () => {
   };
 
   return (
-    <div className="relative w-[95vw] flex justify-center h-32 mt-10 -m-10 bg-[rgba(17,17,17)] overflow-hidden">
+    <div className="relative w-[95vw] flex justify-center h-32 mt-10 -m-10 bg-white dark:bg-[rgba(17,17,17)] overflow-hidden">
       <div
         className="w-full h-full m-8 flex justify-center transition-all duration-300 pt-4 px-10"
         ref={container}

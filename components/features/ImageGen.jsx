@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import FeatureCategory from "../special-text/FeatureCategory";
 
 const TypingGradientGraphic = () => {
-  const [typedText, setTypedText] = useState("");
-  const [showImages, setShowImages] = useState(false);
-  const [showGradient, setShowGradient] = useState(false);
-  const [showPlaceholders, setShowPlaceholders] = useState(true);
-  const [animating, setAnimating] = useState(true);
+  const [typedText, setTypedText] = useState("Watercolor river in a canyon");
+  const [showImages, setShowImages] = useState(true);
+  const [showGradient, setShowGradient] = useState(true);
+  const [showPlaceholders, setShowPlaceholders] = useState(false);
+  const [animating, setAnimating] = useState(false);
 
   function type() {
     let currentIndex = 0;
@@ -38,10 +38,6 @@ const TypingGradientGraphic = () => {
       clearInterval(typingInterval);
     };
   }
-
-  useEffect(() => {
-    type();
-  }, []);
 
   return (
     <div className="block lg:grid grid-cols-3 h-full items-center">
@@ -107,24 +103,22 @@ const TypingGradientGraphic = () => {
             animating === false && type();
           }}
           title="Replay animation"
-          className={`absolute bottom-0 right-1 md:bottom-2 md:right-4 rounded-md p-2 font-mono mb-2 text-xs bg-purple-200 dark:bg-zinc-800 ${
+          className={`absolute bottom-0 right-1 md:bottom-2 md:right-4 rounded-full font-mono mb-2 text-xs ${
             animating === false
-              ? "cursor-pointer hover:bg-purple-300 dark:hover:bg-zinc-700"
-              : "cursor-not-allowed bg-purple-200 text-black/50 dark:bg-zinc-800 dark:text-white/25"
-          } transition text-center`}
+              ? "cursor-pointer text-purple-400 hover:text-purple-600 focus:text-purple-700 dark:text-purple-50 dark:hover:text-purple-400 dark:focus:text-purple-400"
+              : "cursor-not-allowed text-purple-400/50 dark:text-white/25"
+          } transition-all text-center`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
             viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-5 h-5"
+            fill="currentColor"
+            className="w-10 h-10"
           >
             <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
+              fillRule="evenodd"
+              d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm14.024-.983a1.125 1.125 0 010 1.966l-5.603 3.113A1.125 1.125 0 019 15.113V8.887c0-.857.921-1.4 1.671-.983l5.603 3.113z"
+              clipRule="evenodd"
             />
           </svg>
         </div>

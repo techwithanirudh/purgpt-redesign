@@ -235,8 +235,8 @@ export const framerAnimations = {
 
 export const featureCategories = {
   general: {
-    color: "text-gray-400",
-    border: "border-gray-400",
+    color: "text-black dark:text-gray-400",
+    border: "border-black dark:border-gray-400",
     text: "General",
     link: "/docs",
   },
