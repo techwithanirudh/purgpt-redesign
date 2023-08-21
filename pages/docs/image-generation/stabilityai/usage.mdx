@@ -1,8 +1,8 @@
-# Using Sberbank Image Generation
+# Using StabilityAI Image Generation
 
 ## Request
 
-**URL: `https://purgpt.xyz/sberbank/images/generations`**
+**URL: `https://purgpt.xyz/stabilityai/images/generations`**
 
 Request Method: `POST`
 
@@ -33,9 +33,7 @@ interface Request {
 
 ```json
 {
-  "prompt": "cat",
-  "n": 1,
-  "size": "1024x1024"
+    "prompt": "A scene where people are commuting to work using giant inflatable rubber ducks instead of regular vehicles."
 }
 ```
 
@@ -45,7 +43,7 @@ interface Request {
 
 ```ts
 interface Response {
-	created?: number;
+	model?: string;
 	data: {
 		url: `https://${string}`
 	}[];
@@ -58,8 +56,9 @@ interface Response {
 {
     "data": [
         {
-            "url": "https://chimeragpt.adventblocks.cc/api/static/images/7lCGEbEDzuBAmAQX.png"
+            "url": "https://chimeragpt.adventblocks.cc/api/static/images/kqwrb1beHYyY1imA.png"
         }
-    ]
+    ],
+    "model": "kandinsky-2.2"
 }
 ```

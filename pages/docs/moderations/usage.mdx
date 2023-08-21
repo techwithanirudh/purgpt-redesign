@@ -6,14 +6,24 @@
 
 Request Method: `POST`
 
-### TS Interface
+### TS Request Interface
 
 ```ts
 interface Request {
 	input: string | string[];
 	model?: string;
+    user?: string;
 };
 ```
+### Request API Reference
+
+
+| **Parameter**    | **Type** (check [TS Interface](#ts-request-interface)) | **Required** | **Description**                                                                                                      |
+|-----------------|-----------------|----------|-----------------------------------------------------------------------------------------------|
+| `input`        | `string \| string[]`        | Required | The input text to evaluate        |
+| `model`             | `string`| Optional | The model you would like to use. Refer to the [Getting Available Models](/docs/models) page for more information.              |
+| `user`            | `string`        | Optional | A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://platform.openai.com/docs/guides/safety-best-practices/end-user-ids).|
+
 
 ### Example JSON Request Body
 

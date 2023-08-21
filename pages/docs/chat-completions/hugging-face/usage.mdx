@@ -1,8 +1,10 @@
-# Using Llama Chat Completion
+import { Callout } from 'nextra/components'
+
+# Using Hugging Face Chat Completion
 
 ## Request
 
-**URL: `https://purgpt.xyz/llama/chat/completions`**
+**URL: `https://purgpt.xyz/hugging-face/chat/completions`**
 
 Request Method: `POST`
 
@@ -30,17 +32,32 @@ interface Request {
 };
 ```
 
+### Request API Reference
+
+<Callout type="warning" emoji="⚠️">
+    Refer to [OpenAI's docs](https://platform.openai.com/docs/api-reference/chat/create) to learn more about some paramaters! 
+</Callout>
+
+| **Parameter**    | **Type** (check [TS Interface](#ts-request-interface)) | **Description**                                                                                                      |
+|------------------|--------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| `model`          | `string`                                           | The model you would like to use. Refer to the [Getting Available Models](/docs/models) page for more information.           |
+| `messages`       | `array` (of objects)                                | An array of messages in the conversation. See the [example request body](#example-json-request-body) for the message structure.             |
+| `messages.role`  | `'system'{:ts}` &#124; `'user'{:ts}` &#124; ...              | The role of the message sender.                                          |
+| `messages.content`| `string`                                          | The content of the message.                                                                                  |
+| `messages.name`  | `string`                                           | (Optional) The name associated with the message sender.                                                      |
+| `messages.function_call` | `object`                                | (Optional) Details of a function call in the message.                                                        |
+
 ### Example JSON Request Body
 
 ```json
 {
-  "model": "gpt-3.5-turbo",
-  "messages": [
-    {
-      "role": "user",
-      "content": "Hello! How are you?"
-    }
-  ]
+	"model": "llama-2-70b-chat",
+	"messages": [
+		{
+		"role": "user",
+		"content": "Hello! How should I cook rice?"
+		}
+	]
 }
 ```
 
@@ -113,7 +130,7 @@ interface Response {
     "id": "chatcmpl-QXlha2FBbmROaXhpZUFyZUF3ZXNvbWUK",
     "object": "chat.completion",
     "created": 0,
-    "model": "gpt-3.5-turbo-0301",
+    "model": "llama-2-70b-chat",
     "usage": {
         "prompt_tokens": 0,
         "completion_tokens": 0,
@@ -124,7 +141,7 @@ interface Response {
             "index": 0,
             "message": {
                 "role": "assistant",
-                "content": "Hello! As an AI language model, I don't have feelings, but I'm here and ready to assist you. How can I help you today?"
+                "content": "Hello!  I'm  happy  to  help  you  with  that.  There  are  a  few  different  methods  for  cooking  rice,  but  I'll  give  you  the  basic  steps  for  cooking  white  rice.  First,  make  sure  you  have  a  medium  saucepan  and  a  lid.  Rinse  the  rice  in  a  fine  mesh  strainer  under  cold  running  water  for  about  30  seconds  to  remove  any  impurities.  Then,  add  2  cups  of  water  for  every  1  cup  of  uncooked  rice.  Bring  the  water  to  a  boil  over  high  heat,  then  reduce  the  heat  to  low  and  cover  the  saucepan  with  a  tight-fitting  lid.  Simmer  for  about  15-20  minutes,  or  until  the  water  has  been  absorbed  and  the  rice  is  tender.  Once  it's  done,  turn  off  the  heat  and  let  it  sit  for  5  minutes  with  the  lid  still  on.  After  that,  fluff  it  up  with  a  fork  and  serve!  Do  you  have  any  other  questions  about  cooking  rice  or  anything  else?"
             },
             "finish_reason": null
         }
