@@ -20,6 +20,8 @@
   "document-analysis": "Document Analysis",
   "moderations": "Moderations",
   "image-generation": "Image Generation",
+  "audio-transcriptions": "Audio Transcriptions",
+  "audio-translations": "Audio Translations",
   "special-openai-features": "Special OpenAI Features",
 
   "-- More": {
