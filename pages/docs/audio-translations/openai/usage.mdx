@@ -1,0 +1,63 @@
+import { Callout } from 'nextra/components'
+
+# Using OpenAI Audio Translations
+
+<Callout type="warning">
+    Currently, you **can only translate text into english** using audio transcriptions.
+</Callout>
+
+## Request
+
+**URL: `https://purgpt.xyz/openai/audio/translations`**
+
+Request Method: `POST`
+
+### TS Request Interface
+
+```ts
+interface Request {
+  file: string;
+  model: string;
+  prompt?: string;
+  response_format?: string;
+  temperature?: number;
+}
+```
+
+### Request API Reference
+
+| Property          | Type     | Required | Description                                                                                                    |
+|-------------------|----------|----------|----------------------------------------------------------------------------------------------------------------|
+| `file`            | `File`   | Required | The audio file object (not file name) to transcribe, in one of these formats: `flac`, `mp3`, `mp4`, `mpeg`, `mpga`, `m4a`, `ogg`, `wav`, or `webm`. |
+| `model`           | `string` | Required | ID of the model to use. Only `whisper-1` is currently available.                                                 |
+| `prompt`          | `string` | Optional | An optional text to guide the model's style or continue a previous audio segment. The prompt should match the audio language. |
+| `response_format` | `string` | Optional | Defaults to `json`. The format of the transcript output, in one of these options: json, text, srt, verbose_json, or vtt. |
+| `temperature`     | `number` | Optional | Defaults to `0`. The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use [log probability](https://en.wikipedia.org/wiki/Log_probability) to automatically increase the temperature until certain thresholds are hit. |
+
+### Example JSON Request Body
+
+```json
+{
+  "file": "https://my-audio-sample.com/audio.mp3",
+  "model": "whisper-1",
+}
+```
+
+## Response
+
+### TS Response Interface
+
+```ts
+interface Response {
+  text: string;
+};
+```
+
+### Example JSON Response
+
+```json
+{
+  "text": "Oh my goodness, I can't believe you can't speak french. You are such an idiot."
+}
+
+```
