@@ -1,0 +1,63 @@
+# Using Yes Image Generation
+
+## Request
+
+**URL: `https://purgpt.xyz/yes/images/generations`**
+
+Request Method: `POST`
+
+### TS Request Interface
+
+```ts
+interface Request {
+    prompt: string;
+    n?: number | null;
+    size?: '256x256' | '512x512' | '1024x1024' | null;
+    response_format?: 'url' | 'b64_json' | null;
+    user?: string;
+};
+```
+
+### Request API Reference
+
+
+| **Parameter**    | **Type** (check [TS Interface](#ts-request-interface)) | **Required** | **Description**                                                                                                      |
+|-----------------|-----------------|----------|-----------------------------------------------------------------------------------------------|
+| `prompt`        | `string`        | Required | A text description of the desired image(s). The maximum length is 1000 characters.         |
+| `n`             | `number \| null`| Optional | The number of images to generate. Must be between 1 and 10. Defaults to 1.                  |
+| `size`          | `string \| null`| Optional | The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`. Defaults to `1024x1024`.|
+| `response_format` | `string \| null`| Optional | The format in which the generated images are returned. Must be one of `url` or `b64_json`. Defaults to `url`.|
+| `user`            | `string`        | Optional | A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://platform.openai.com/docs/guides/safety-best-practices/end-user-ids).|
+
+### Example JSON Request Body
+
+```json
+{
+    "prompt": "A scene where people are commuting to work using giant inflatable rubber ducks instead of regular vehicles."
+}
+```
+
+## Response
+
+### TS Response Interface
+
+```ts
+interface Response {
+	model?: string;
+	data: {
+		url: `https://${string}`
+	}[];
+};
+```
+
+### Example JSON Response
+
+```json
+{
+    "data": [
+        {
+            "url": "https://chimeragpt.adventblocks.cc/api/static/images/kqwrb1beHYyY1imA.png"
+        }
+    ],
+}
+```

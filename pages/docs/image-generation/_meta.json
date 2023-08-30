@@ -3,5 +3,10 @@
     "sberbank": "Sberbank",
     "stabilityai": "StabilityAI",
     "deepfloyd": "Deepfloyd",
+    "yes": {
+        "title": "Yes",
+        "lmao": "wtf",
+        "Do I know why it's called *yes*?": false
+    },
     "openai": "OpenAI"
 }
