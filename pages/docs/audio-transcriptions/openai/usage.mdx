@@ -1,4 +1,4 @@
-# Using OpenAI Image Generation
+# Using OpenAI Audio Transcriptions
 
 ## Request
 
@@ -34,7 +34,7 @@ interface Request {
 
 ```json
 {
-  "file": "https://audio-samples.github.io/samples/mp3/blizzard_unconditional/sample-0.mp3",
+  "file": "https://my-audio-sample.com/audio.mp3",
   "model": "whisper-1",
   "response_format": "json"
 }
@@ -46,10 +46,7 @@ interface Request {
 
 ```ts
 interface Response {
-	model?: string;
-	data: {
-		url: `https://${string}`
-	}[];
+  text: string;
 };
 ```
 
@@ -57,10 +54,7 @@ interface Response {
 
 ```json
 {
-    "data": [
-        {
-            "url": "https://chimeragpt.adventblocks.cc/api/static/images/kqwrb1beHYyY1imA.png"
-        }
-    ],
+  "text": "Imagine the wildest idea that you've ever had, and you're curious about how it might scale to something that's a 100, a 1,000 times bigger. This is a place where you can get to do that."
 }
+
 ```
