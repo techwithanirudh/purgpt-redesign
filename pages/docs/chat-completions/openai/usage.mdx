@@ -18,7 +18,8 @@ Request Method: `POST`
 interface Request {
 	model?: string;
 	personality?: string;
-	primaryProvider?: 'ChimeraGPT' | 'FoxGPT' | 'Skailar' | 'Pawan' | 'Churchless';
+	disableErrorSummarization?: true;
+	primaryProvider?: string;
 	messages: {
 		role: 'system' | 'user' | 'assistant' | 'function';
 		content: string;
@@ -65,6 +66,7 @@ interface Request {
 |------------------|--------------------------------------------------|-----|-------------------------------------------------------------------------------------------------------------|
 | `model`          | `string`                                           | Required if no personality | The model you would like to use. Refer to the [Getting Available Models](/docs/models) page for more information.           |
 | `personality`    | `string`                                           | Required if no model | Specifies the personality for the conversation. Refer to the [Getting Personalities](/docs/chat-completions/personalities/getting-personalities) page for more details.    |
+| `disableErrorSummarization`    | `boolean`                                           | Optional | AI-powered error summarizer: most error messages will be summarized according to the error records (if all providers errored).    |
 | `primaryProvider`| `'ChimeraGPT'{:ts}` &#124; `'FoxGPT'{:ts}` &#124; ...         | Optional | The primary provider to use for generating responses. The API will try this provider first. If it returns with any error(s), the API will try other providers!                   |
 | `messages`          | `array`                                    | Required | A list of messages comprising the conversation so far.                                           |
 | `messages.role`              | `'system' \| 'user' \| 'assistant' \| 'function'`                                   | Required | The role of the message's author. One of `system`, `user`, `assistant`, or `function`.                                       |
