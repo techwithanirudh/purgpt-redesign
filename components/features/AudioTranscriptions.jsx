@@ -172,7 +172,7 @@ export default function AudioTranscriptions() {
             style={{ clipPath: clipPathValue }}
           >
             <p className="py-16 md:text-[1.2rem] px-4 pr-10 text-purple-400 dark:text-white max-w-full overflow-hidden">
-              I love baking! I could bake all day. <span className="hidden md:block">In fact, I will tomorrow!</span>
+              I love baking! I could bake all day. <span className="hidden md:inline-block">In fact, I will tomorrow!</span>
             </p>
           </div>
         </div>
