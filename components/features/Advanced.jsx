@@ -7,7 +7,7 @@ export default function Advanced() {
         <FeatureCategory category="general" />
         <h3 className="text-4xl font-bold m-8">Advanced AIs from companies you trust</h3>
       </div>
-      <div className="absolute top-0 left-0 w-full h-full bg-opacity-50 bg-purple-100 dark:bg-black z-10"/>
+      <div className="absolute top-0 left-0 w-full h-full bg-opacity-50 bg-purple-100 dark:bg-black/50 z-10"/>
       <img
         src="/features/🤗.png"
         className="-z-10 w-32 opacity-50 animate-ungrayscale-1 transition-all duration-300 absolute top-0 -left-6"

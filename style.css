@@ -192,3 +192,7 @@ code.text-\[\.45em\] {
     transform: rotate(360deg);
   }
 }
+
+.grabbing-cursor {
+  cursor: grabbing !important;
+}

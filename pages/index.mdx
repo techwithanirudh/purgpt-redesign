@@ -14,6 +14,8 @@ import Personalities from "../components/features/Personalities.jsx";
 import Flexible from "../components/features/Flexible.jsx";
 import DocumentScan from "../components/features/DocumentScan.jsx";
 import ImageGen from "../components/features/ImageGen.jsx";
+import AudioTranscriptions from "../components/features/AudioTranscriptions.jsx";
+import AudioTranslations from "../components/features/AudioTranslations.jsx";
 import { motion } from "framer-motion";
 import { framerAnimations } from "../page-data";
 import CategoryScroll from "../components/features/CategoryScroll.jsx";
@@ -121,6 +123,24 @@ import CategoryScroll from "../components/features/CategoryScroll.jsx";
           className="text-center col-span-1 overflow-hidden group mb-4 p-4 relative focus:shadow-lg transition-all bg-purple-500/10 dark:bg-white/5 rounded-lg"
         >
           <DocumentScan/>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: '-20px' }}
+          transition={{ duration: Math.min(0.25 + 4 * 0.5, 0.8) }}
+          className="flex items-center justify-center text-center col-span-1 overflow-hidden group mb-4 p-4 relative focus:shadow-lg transition-all bg-purple-500/10 dark:bg-white/5 rounded-lg"
+        >
+          <AudioTranslations/>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: '-20px' }}
+          transition={{ duration: Math.min(0.25 + 4 * 0.5, 0.8) }}
+          className="flex items-center justify-center text-center col-span-2 overflow-hidden group mb-4 p-4 relative focus:shadow-lg transition-all bg-purple-500/10 dark:bg-white/5 rounded-lg"
+        >
+          <AudioTranscriptions/>
         </motion.div>
 
       </div>

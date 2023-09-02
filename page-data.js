@@ -247,8 +247,8 @@ export const featureCategories = {
     link: "/docs/document-analysis",
   },
   completions: {
-    color: "text-indigo-500",
-    border: "border-indigo-400",
+    color: "text-purple-400",
+    border: "border-purple-300",
     text: "Completions",
     link: "/docs/completions",
   },
@@ -269,5 +269,17 @@ export const featureCategories = {
     border: "border-emerald-400",
     text: "Moderations",
     link: "/docs/moderations",
+  },
+  audioTranscriptions: {
+    color: "text-sky-500",
+    border: "border-sky-400",
+    text: "Audio Transcriptions",
+    link: "/docs/audio-transcriptions",
+  },
+  audioTranslations: {
+    color: "text-indigo-500",
+    border: "border-indigo-400",
+    text: "Audio Translations",
+    link: "/docs/audio-translations",
   },
 };
