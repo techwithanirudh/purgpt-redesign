@@ -34,7 +34,7 @@ export default function AudioTranslations() {
           />
         </svg>
 
-        <FileTree className="bg-gradient-to-l from-indigo-500 to-pink-400 dark:to-pink-500 animate-personalities">
+        <FileTree className="bg-gradient-to-l from-indigo-400 dark:from-indigo-500 to-pink-400 text-white dark:to-pink-500 animate-personalities">
           <FileTree.File name="french-class.txt" />
         </FileTree>
       </div>

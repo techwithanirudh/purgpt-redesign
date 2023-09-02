@@ -40,7 +40,7 @@ const TypingGradientGraphic = () => {
   }
 
   return (
-    <div className="block lg:grid grid-cols-3 h-full items-center">
+    <div className="block lg:grid grid-cols-3 items-center">
       <div className="flex col-span-1 flex-col items-center justify-center h-full">
         <FeatureCategory category="imageGen" />
         <h3 className="text-4xl font-bold my-8 mb-10 mx-4 lg:m-0">

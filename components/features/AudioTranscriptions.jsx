@@ -26,7 +26,7 @@ export default function AudioTranscriptions() {
         </h3>
         <p className="mt-2">Magically transcribe audio files into readable text.</p>
       </div>
-      <div className="relative w-[550px] bg-white/5 mx-auto truncate overflow-hidden rounded-lg border-white/5 border-2">
+      <div className="relative w-[550px] bg-white/5 mx-auto truncate overflow-hidden rounded-lg border-purple-200 dark:border-white/5 border-2">
         {/* Sound Wave by Samet Kuru from https://thenounproject.com/browse/icons/term/sound-wave/ Noun Project (CC BY 3.0) (icon: https://thenounproject.com/icon/sound-wave-2249826/) */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +34,7 @@ export default function AudioTranscriptions() {
           version="1.1"
           x="0px"
           y="0px"
-          className="fill-white h-[212px] absolute top-0 left-0"
+          className="fill-purple-300 dark:fill-white h-[212px] absolute top-0 left-0"
           viewBox="0 0 100 125"
           enableBackground="new 0 0 100 100"
           xmlSpace="preserve"
@@ -68,7 +68,7 @@ export default function AudioTranscriptions() {
           version="1.1"
           x="0px"
           y="0px"
-          className="fill-white h-[212px] absolute top-0 left-[8.5rem]"
+          className="fill-purple-300 dark:fill-white h-[212px] absolute top-0 left-[8.5rem]"
           viewBox="0 0 100 125"
           enableBackground="new 0 0 100 100"
           xmlSpace="preserve"
@@ -102,7 +102,7 @@ export default function AudioTranscriptions() {
           version="1.1"
           x="0px"
           y="0px"
-          className="fill-white h-[212px] absolute top-0 left-[17rem]"
+          className="fill-purple-300 dark:fill-white h-[212px] absolute top-0 left-[17rem]"
           viewBox="0 0 100 125"
           enableBackground="new 0 0 100 100"
           xmlSpace="preserve"
@@ -136,7 +136,7 @@ export default function AudioTranscriptions() {
           version="1.1"
           x="0px"
           y="0px"
-          className="fill-white h-[212px] absolute top-0 left-[400px]"
+          className="fill-purple-300 dark:fill-white h-[212px] absolute top-0 left-[400px]"
           viewBox="0 0 100 125"
           enableBackground="new 0 0 100 100"
           xmlSpace="preserve"
@@ -167,10 +167,10 @@ export default function AudioTranscriptions() {
 
         <div className="relative w-full h-[155px]">
           <div
-            className="bg-[#282828] rounded-lg select-none absolute text-right top-0 left-0"
+            className="bg-[#f6eefe] dark:bg-[#282828] rounded-lg select-none absolute text-right top-0 left-0"
             style={{ clipPath: clipPathValue }}
           >
-            <p className="py-16 text-[1.2rem] px-4 pr-10 truncate line-clamp-1 overflow-hidden">
+            <p className="py-16 text-[1.2rem] px-4 pr-10 truncate text-purple-400 dark:text-white line-clamp-1 overflow-hidden">
               I love baking! I could bake all day. In fact, I will tomorrow!
             </p>
           </div>
@@ -191,12 +191,12 @@ export default function AudioTranscriptions() {
           defaultPosition={{ x: 147, y: 0 }}
         >
           <div
-            className={`top-0 group -ml-[2px] p-4 pr-4 bg-[#282828] absolute ${
+            className={`top-0 group -ml-[2px] p-4 pr-4 bg-[#f6eefe] dark:bg-[#282828] absolute ${
               isDragging === false ? "cursor-grab" : "cursor-dragging"
             }`}
           >
-            <div className="h-[125px] w-2 bg-gradient-to-l from-indigo-500 to-pink-400 dark:to-pink-500 text-white animate-personalities rounded-xl" />
-            <div className="transition bg-gradient-to-l p-1 from-indigo-500 to-pink-400 dark:to-pink-500 text-white animate-personalities top-[40%] left-1 absolute rounded-full hover:scale-110 focus:scale-110">
+            <div className="h-[125px] w-2 bg-gradient-to-l from-indigo-400 dark:from-indigo-500 to-pink-400 text-white dark:to-pink-500 animate-personalities rounded-xl" />
+            <div className="transition bg-gradient-to-l p-1 from-indigo-400 dark:from-indigo-500 to-pink-400 text-white dark:to-pink-500 animate-personalities top-[40%] left-1 absolute rounded-full hover:scale-110 focus:scale-110">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

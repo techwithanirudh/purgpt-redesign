@@ -6,7 +6,7 @@ function DocumentScan() {
       <FeatureCategory category="documentAnalysis" />
       <h3 className="text-4xl font-bold lg:mx-4 my-4 lg:my-8 md:leading-3">Scan files</h3>
       <p className="my-4">to extract and understand text</p>
-      <div className="group w-full font-mono bg-black/10 dark:bg-white/10 rounded-lg">
+      <div className="group w-full font-mono bg-purple-300/50 dark:bg-white/10 rounded-lg">
         <div className="flex p-4 text-sm m-auto">
           <div className="flex-shrink-0 flex flex-col relative items-end">
             <div className="relative flex">
