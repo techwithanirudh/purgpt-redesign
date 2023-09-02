@@ -37,8 +37,8 @@ const CategoryScroll = () => {
           ))}
         </div>
       </div>
-      <div className="absolute left-1 top-0 w-1/6 h-full bg-gradient-to-r from-white dark:from-[rgba(17,17,17)] to-transparent"></div>
-      <div className="absolute right-0 top-0 w-1/6 h-full bg-gradient-to-r from-transparent to-white dark:to-[rgba(17,17,17)]"></div>
+      <div className="absolute left-1 top-0 w-1/12 md:w-1/6 lg:w-1/4 h-full bg-gradient-to-r from-white dark:from-[rgba(17,17,17)] to-transparent"></div>
+      <div className="absolute right-0 top-0 w-1/12 md:w-1/6 lg:w-1/4 h-full bg-gradient-to-r from-transparent to-white dark:to-[rgba(17,17,17)]"></div>
 
       <button
         className={`absolute hidden md:block lg:hidden top-[50%] mt-4 left-8 [transform:translateY(-100%)] rounded-full p-2 transition ${

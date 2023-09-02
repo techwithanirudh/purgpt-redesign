@@ -8,7 +8,7 @@ const BigButton = ({ children, className, link }) => {
   return (
     <Link href={link} className="relative">
       <div
-        className={`fixed inset-0 z-[1000000] bg-black transition-opacity duration-300 ${
+        className={`fixed inset-0 z-[9] bg-black transition-opacity duration-300 ${
           isHovered
             ? "opacity-50 pointer-events-none"
             : "opacity-0 pointer-events-none"
@@ -18,7 +18,7 @@ const BigButton = ({ children, className, link }) => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         className={
-          `${className ? className : ''} text-white relative z-[1000000] transition-all duration-300 m-4 px-5 py-2 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-lg hover:shadow-lg hover:shadow-purple-500/50`
+          `${className ? className : ''} text-white relative z-10 transition-all duration-300 m-4 px-5 py-2 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-lg hover:shadow-lg hover:shadow-purple-500/50`
         }
       >
         {children}
