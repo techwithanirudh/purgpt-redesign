@@ -19,7 +19,7 @@ export default function AudioTranscriptions() {
   return (
     <div>
       <div className="mb-6 mt-2">
-        <p className="mb-4 block md:inline-block">
+        <p className="mb-4 block sm:inline-block">
       <FeatureCategory category="audioTranscriptions" /></p>
         <FeatureCategory category="audioTranslations" />
         <h3 className="text-4xl font-bold lg:mx-4 my-8 md:leading-3">
@@ -27,7 +27,7 @@ export default function AudioTranscriptions() {
         </h3>
         <p className="mt-2">Magically transcribe audio files into readable text.</p>
       </div>
-      <div className="relative md:w-[550px] bg-white/5 mx-auto truncate overflow-hidden rounded-lg border-purple-200 dark:border-white/5 border-2">
+      <div className="relative md:w-[550px] overflow-hidden bg-white/5 mx-auto truncate rounded-lg border-purple-200 dark:border-white/5 border-2">
         {/* Sound Wave by Samet Kuru from https://thenounproject.com/browse/icons/term/sound-wave/ Noun Project (CC BY 3.0) (icon: https://thenounproject.com/icon/sound-wave-2249826/) */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -103,7 +103,7 @@ export default function AudioTranscriptions() {
           version="1.1"
           x="0px"
           y="0px"
-          className="fill-purple-300 dark:fill-white h-[212px] absolute top-0 left-[17rem]"
+          className="fill-purple-300 dark:fill-white h-[212px] absolute top-0 left-[17rem] hidden md:block overflow-hidden"
           viewBox="0 0 100 125"
           enableBackground="new 0 0 100 100"
           xmlSpace="preserve"
@@ -137,7 +137,7 @@ export default function AudioTranscriptions() {
           version="1.1"
           x="0px"
           y="0px"
-          className="fill-purple-300 dark:fill-white h-[212px] absolute top-0 left-[400px] hidden md:block"
+          className="fill-purple-300 dark:fill-white h-[212px] absolute top-0 left-[400px] hidden md:block overflow-hidden"
           viewBox="0 0 100 125"
           enableBackground="new 0 0 100 100"
           xmlSpace="preserve"
@@ -168,11 +168,11 @@ export default function AudioTranscriptions() {
 
         <div className="relative w-full h-[155px]">
           <div
-            className="bg-[#f6eefe] dark:bg-[#282828] rounded-lg select-none absolute text-right top-0 left-0"
+            className="bg-[#f6eefe] dark:bg-[#282828] rounded-lg select-none absolute overflow-hidden text-right top-0 left-0"
             style={{ clipPath: clipPathValue }}
           >
-            <p className="py-16 md:text-[1.2rem] px-4 pr-10 truncate text-purple-400 dark:text-white line-clamp-1 overflow-hidden">
-              I love baking! I could bake all day. In fact, I will tomorrow!
+            <p className="py-16 md:text-[1.2rem] px-4 pr-10 text-purple-400 dark:text-white max-w-full overflow-hidden">
+              I love baking! I could bake all day. <span className="hidden md:block">In fact, I will tomorrow!</span>
             </p>
           </div>
         </div>

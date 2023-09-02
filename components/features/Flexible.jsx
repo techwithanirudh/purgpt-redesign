@@ -25,8 +25,11 @@ export default function Flexible() {
   
       <div className="lg:flex md:justify-between items-center px-4 h-full">
         <div className="mt-8 lg:mt-0">
+          <p className="mb-4 block sm:inline-block">
             <FeatureCategory category="chatCompletions" />
-            <FeatureCategory category="completions" />
+            </p>
+            <p className="mb-4 block sm:inline-block">
+            <FeatureCategory category="completions" /></p>
             <FeatureCategory category="imageGen" />
           <h3 className="text-4xl mt-4 font-bold mb-8">Incredibly flexible usage</h3>
         </div>
