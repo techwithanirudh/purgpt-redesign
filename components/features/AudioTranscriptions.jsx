@@ -19,14 +19,15 @@ export default function AudioTranscriptions() {
   return (
     <div>
       <div className="mb-6 mt-2">
-      <FeatureCategory category="audioTranscriptions" />
+        <p className="mb-4 block md:inline-block">
+      <FeatureCategory category="audioTranscriptions" /></p>
         <FeatureCategory category="audioTranslations" />
         <h3 className="text-4xl font-bold lg:mx-4 my-8 md:leading-3">
           Audio? Make it text.
         </h3>
         <p className="mt-2">Magically transcribe audio files into readable text.</p>
       </div>
-      <div className="relative w-[550px] bg-white/5 mx-auto truncate overflow-hidden rounded-lg border-purple-200 dark:border-white/5 border-2">
+      <div className="relative md:w-[550px] bg-white/5 mx-auto truncate overflow-hidden rounded-lg border-purple-200 dark:border-white/5 border-2">
         {/* Sound Wave by Samet Kuru from https://thenounproject.com/browse/icons/term/sound-wave/ Noun Project (CC BY 3.0) (icon: https://thenounproject.com/icon/sound-wave-2249826/) */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +137,7 @@ export default function AudioTranscriptions() {
           version="1.1"
           x="0px"
           y="0px"
-          className="fill-purple-300 dark:fill-white h-[212px] absolute top-0 left-[400px]"
+          className="fill-purple-300 dark:fill-white h-[212px] absolute top-0 left-[400px] hidden md:block"
           viewBox="0 0 100 125"
           enableBackground="new 0 0 100 100"
           xmlSpace="preserve"
@@ -170,7 +171,7 @@ export default function AudioTranscriptions() {
             className="bg-[#f6eefe] dark:bg-[#282828] rounded-lg select-none absolute text-right top-0 left-0"
             style={{ clipPath: clipPathValue }}
           >
-            <p className="py-16 text-[1.2rem] px-4 pr-10 truncate text-purple-400 dark:text-white line-clamp-1 overflow-hidden">
+            <p className="py-16 md:text-[1.2rem] px-4 pr-10 truncate text-purple-400 dark:text-white line-clamp-1 overflow-hidden">
               I love baking! I could bake all day. In fact, I will tomorrow!
             </p>
           </div>
