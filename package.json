@@ -23,7 +23,6 @@
     "framer-motion": "^10.15.0",
     "million": "^2.5.13",
     "next": "^13.0.6",
-    "next-nprogress": "^1.4.0",
     "nextra": "latest",
     "nextra-theme-docs": "latest",
     "nprogress": "^0.2.0",
