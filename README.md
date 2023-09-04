@@ -10,7 +10,7 @@ Click the button to clone this repository and deploy it on Vercel:
 
 [![](https://vercel.com/button)](https://vercel.com/new/clone?s=https://github.com/Sidd-underscore/purgpt-redesign&showOptionalTeamCreation=false)
 
-Alternatively, download this Repo and unzip the zipped folder.
+Alternatively, download this Repo and unzip the zipped folder
 
 Then:
 
