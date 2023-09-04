@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shuding/nextra-docs-template.git"
+    "url": "git+https://github.com/PurGPT/purgpt-redesign.git"
   },
-  "author": "Shu Ding <g@shud.in>",
+  "author": "Sidd_ <sidd@purgpt.xyz>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shuding/nextra-docs-template/issues"
+    "url": "https://github.com/PurGPT/purgpt-redesign/issues"
   },
-  "homepage": "https://github.com/shuding/nextra-docs-template#readme",
+  "homepage": "https://purgpt.xyz",
   "dependencies": {
     "@headlessui/react": "^1.7.15",
     "autoprefixer": "^10.4.14",
