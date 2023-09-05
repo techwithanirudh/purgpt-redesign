@@ -52,31 +52,30 @@ const config: DocsThemeConfig = {
         <meta name="msapplication-TileColor" content="#7e22ce" />
         <meta name="theme-color" content="#7e22ce" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta httpEquiv="Content-Language" content="en" />
-        <meta
-          name="description"
-          content="Unleashing the Power of Free AI Innovation"
-        />
-        <meta
-          name="og:description"
-          content="Unleashing the Power of Free AI Innovation"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content={socialCard} />
-        <meta name="twitter:site:domain" content="purgpt.xyz" />
-        <meta name="twitter:url" content="https://purgpt.xyz" />
-        <meta
-          name="og:title"
-          content={title ? title : "PurGPT"}
-        />
-        <meta name="og:image" content={socialCard} />
+        <meta httpEquiv="Content-Language" content="en" />       
         <meta name="apple-mobile-web-app-title" content="PurGPT" />
         <link rel="icon" href="/purgpt-favicon.png" type="image/png" />
+
+        <meta name="description" content="Unleashing the Power of Free AI Innovation" />
+
+        <meta property="og:url" content="https://purgpt-redesign.vercel.app/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title ? title : "PurGPT"} />
+        <meta property="og:description" content="Unleashing the Power of Free AI Innovation" />
+        <meta property="og:image" content={socialCard} />
+
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:domain" content="purgpt.xyz" />
+        <meta property="twitter:url" content="https://purgpt.xyz/" />   
+        <meta name="twitter:site:domain" content="purgpt.xyz" />
+        <meta name="twitter:title" content={title ? title : "PurGPT"} />
+        <meta name="twitter:description" content="Unleashing the Power of Free AI Innovation" />
+        <meta name="twitter:image" content={socialCard} />
       </>
     );
   },
   banner: {
-    key: "New website release!",
+    key: "new-website-banner",
     text: (
       <a href="https://discord.gg/9PU85As8Pd" target="_blank" rel="noreferrer">
         🎉 New website release! Review on the Discord →
