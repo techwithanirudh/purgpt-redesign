@@ -45,7 +45,7 @@ const config: DocsThemeConfig = {
   head: function useHead() {
     const { title } = useConfig();
     const { route } = useRouter();
-    const socialCard = "/purgpt-social-card.png";
+    const socialCard = "https://purgpt-redesign.vercel.app/purgpt-social-card.png";
 
     return (
       <>
