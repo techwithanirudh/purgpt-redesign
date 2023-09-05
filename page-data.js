@@ -4,7 +4,6 @@ export const donatorPlans = [
     cost_eur: "€0",
     benefits: [
       "2k daily Requests",
-      "Access to normal Discord channel",
       "10 Requests/10 seconds",
     ],
     tier_int: 0,
@@ -14,7 +13,8 @@ export const donatorPlans = [
     cost_eur: "€5",
     benefits: [
       "4k daily Requests",
-      "Access to exclusive Discord channel",
+      "Access to exclusive Discord channels",
+      "Access to leaked information about updates",
       "10 Requests/10 seconds",
       "Prioritized support",
       "Exclusive features",
@@ -27,7 +27,8 @@ export const donatorPlans = [
     cost_eur: "€7",
     benefits: [
       "9k daily Requests",
-      "Access to exclusive Discord channel",
+      "Access to exclusive Discord channels",
+      "Access to leaked information about updates",
       "10 Requests/10 seconds",
       "Prioritized support",
       "Exclusive features",
@@ -40,7 +41,8 @@ export const donatorPlans = [
     cost_eur: "€10",
     benefits: [
       "13k daily Requests",
-      "Access to exclusive Discord channel",
+      "Access to exclusive Discord channels",
+      "Access to leaked information about updates",
       "10 Requests/10 seconds",
       "Prioritized support",
       "Exclusive features",
@@ -53,7 +55,8 @@ export const donatorPlans = [
     cost_eur: "€15",
     benefits: [
       "20k daily Requests",
-      "Access to exclusive Discord channel",
+      "Access to exclusive Discord channels",
+      "Access to leaked information about updates",
       "10 Requests/10 seconds",
       "Prioritized support",
       "Exclusive features",
@@ -204,6 +207,26 @@ export const awesomePeople = [
         identifier: "sidd_underscore",
         icon: "/about/the-team/twitter.svg",
         link: "https://twitter.com/sidd_underscore",
+      },
+    ],
+  },
+  {
+    name: "Mr. Don Stuff",
+    pronouns: "he/him",
+    avatar: "/about/the-team/don.png",
+    description: "AI Developper/ Creator of PurAI",
+    socials: [
+      {
+        name: "GitHub",
+        identifier: "DonDoesStuff",
+        icon: "/about/the-team/github.svg",
+        link: "https://github.com/DonDoesStuff",
+      },
+      {
+        name: "YouTube",
+        identifier: "DonDoesStuff",
+        icon: "/about/the-team/youtube.svg",
+        link: "https://www.youtube.com/channel/UCFTOoek0s84WO16DNhSmytQ",
       },
     ],
   },
