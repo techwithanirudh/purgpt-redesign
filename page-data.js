@@ -5,6 +5,7 @@ export const donatorPlans = [
     benefits: [
       "2k daily Requests",
       "10 Requests/10 seconds",
+      "Access to normal support and Discord server"
     ],
     tier_int: 0,
   },
@@ -214,7 +215,7 @@ export const awesomePeople = [
     name: "Mr. Don Stuff",
     pronouns: "he/him",
     avatar: "/about/the-team/don.png",
-    description: "AI Developper/ Creator of PurAI",
+    description: "AI Developper/Creator of PurAI",
     socials: [
       {
         name: "GitHub",
